@@ -9,6 +9,16 @@ Driven security enthusiast focused on **offensive security**. Actively building 
 
 ---
 
+### 📝 Latest write-ups
+- **Redeemer** · HTB Starting Point (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
+- **Dancing** · Tier 0 — SMB null session → anonymous share · [read](https://blackhawkyama.github.io/posts/htb-starting-point-dancing/)
+- **Fawn** · Tier 0 — anonymous FTP → exposed file · [read](https://blackhawkyama.github.io/posts/htb-starting-point-fawn/)
+- **Meow** · Tier 0 — exposed Telnet → passwordless root · [read](https://blackhawkyama.github.io/posts/htb-starting-point-meow/)
+
+Every post walks **recon → enumeration → foothold → loot → root-cause remediation** — tied to one recurring failure class: *a network service reachable without authentication.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
+
+---
+
 ### 🔧 Tools & Tech
 **Offensive:** Nmap · Burp Suite · Metasploit · Wireshark · Gobuster/ffuf · Hydra · John the Ripper · Hashcat · Nikto · sqlmap · BloodHound
 **Scripting:** Python · Bash · PowerShell (basic)
