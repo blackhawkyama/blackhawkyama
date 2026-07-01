@@ -9,6 +9,16 @@ Driven security enthusiast focused on **offensive security**. Actively building 
 
 ---
 
+### 🧠 Also building — AI/ML engineering
+
+Alongside offensive security, I build production-grade AI systems and the tooling to keep them honest — increasingly at the **intersection of security and AI**.
+
+- **[assay](https://github.com/blackhawkyama/assay)** — a from-scratch **LLM-evaluation framework**: versioned golden datasets, deterministic **and** LLM-as-judge scorers, position-bias-mitigated pairwise comparison, regression detection, and a CI gate. Answers the question every model change raises — *did it get better or worse?* · Python · Pydantic · Anthropic API · tested.
+- **[recce](https://github.com/blackhawkyama/recce)** — an **autonomous reconnaissance agent** for authorized targets: a real plan → enumerate → hypothesize → hand-off loop with tool-use, failure recovery, and schema-validated output. Recon only, human-gated. *(security × AI)*
+- **AI document-analysis engine** *(private)* — a production pipeline that turns inspection & permit PDFs into structured risk reports: defect extraction, faithfulness auditing, cost/permit enrichment, and risk scoring. Building its **anti-hallucination eval harness** is what led me to generalize that work into `assay`.
+
+---
+
 ### 📝 Latest write-ups
 
 **Web app hacking — PortSwigger Web Security Academy**
