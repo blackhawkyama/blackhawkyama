@@ -12,6 +12,7 @@ Driven security enthusiast focused on **offensive security**. Actively building 
 ### 📝 Latest write-ups
 
 **Web app hacking — PortSwigger Web Security Academy**
+- **SSRF** — hijacked a server-side fetch to reach `localhost/admin` → deleted an internal user · [read](https://blackhawkyama.github.io/posts/portswigger-ssrf-basic/)
 - **IDOR / broken access control** — changed an object ID → read another user's data → account takeover · [read](https://blackhawkyama.github.io/posts/portswigger-idor-access-control/)
 - **Reflected XSS** — script injected into an HTML context → arbitrary JS in the victim's browser · [read](https://blackhawkyama.github.io/posts/portswigger-xss-reflected/)
 - **SQL injection** — hidden-data retrieval & auth bypass via `' OR 1=1--` · [read](https://blackhawkyama.github.io/posts/portswigger-sqli-retrieve-hidden-data/)
