@@ -10,12 +10,18 @@ Driven security enthusiast focused on **offensive security**. Actively building 
 ---
 
 ### 📝 Latest write-ups
-- **Redeemer** · HTB Starting Point (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
-- **Dancing** · Tier 0 — SMB null session → anonymous share · [read](https://blackhawkyama.github.io/posts/htb-starting-point-dancing/)
-- **Fawn** · Tier 0 — anonymous FTP → exposed file · [read](https://blackhawkyama.github.io/posts/htb-starting-point-fawn/)
-- **Meow** · Tier 0 — exposed Telnet → passwordless root · [read](https://blackhawkyama.github.io/posts/htb-starting-point-meow/)
 
-Every post walks **recon → enumeration → foothold → loot → root-cause remediation** — tied to one recurring failure class: *a network service reachable without authentication.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
+**Web app hacking — PortSwigger Web Security Academy**
+- **Reflected XSS** — script injected into an HTML context → arbitrary JS in the victim's browser · [read](https://blackhawkyama.github.io/posts/portswigger-xss-reflected/)
+- **SQL injection** — hidden-data retrieval & auth bypass via `' OR 1=1--` · [read](https://blackhawkyama.github.io/posts/portswigger-sqli-retrieve-hidden-data/)
+
+**Hack The Box — Starting Point**
+- **Redeemer** (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
+- **Dancing** (Tier 0) — SMB null session → anonymous share · [read](https://blackhawkyama.github.io/posts/htb-starting-point-dancing/)
+- **Fawn** (Tier 0) — anonymous FTP → exposed file · [read](https://blackhawkyama.github.io/posts/htb-starting-point-fawn/)
+- **Meow** (Tier 0) — exposed Telnet → passwordless root · [read](https://blackhawkyama.github.io/posts/htb-starting-point-meow/)
+
+Every post runs **recon → exploitation → impact → root-cause remediation**. The thread across all of them: *untrusted input or access reaching a trusted context.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
 
 ---
 
