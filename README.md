@@ -21,6 +21,10 @@ Alongside offensive security, I build AI tools — and the eval and security too
 
 ### 📝 Latest write-ups
 
+**Methodology & tradecraft**
+- **Testing a GraphQL API (introspection off)** — harvesting operations from app traffic, then IDOR & batching abuse · [read](https://blackhawkyama.github.io/posts/testing-graphql-apis/)
+- **Respecting WAFs** — the 30-second bot-detection pre-check and why target-vetting saves your day · [read](https://blackhawkyama.github.io/posts/respecting-wafs-bug-bounty/)
+
 **Web app hacking — PortSwigger Web Security Academy**
 - **CSRF** — auto-submitting forged form → changed a victim's email as them (path to account takeover) · [read](https://blackhawkyama.github.io/posts/portswigger-csrf-no-defenses/)
 - **SSRF** — hijacked a server-side fetch to reach `localhost/admin` → deleted an internal user · [read](https://blackhawkyama.github.io/posts/portswigger-ssrf-basic/)
