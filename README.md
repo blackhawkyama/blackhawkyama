@@ -38,7 +38,7 @@ Alongside offensive security, I build AI tools — and the eval and security too
 - **Fawn** (Tier 0) — anonymous FTP → exposed file · [read](https://blackhawkyama.github.io/posts/htb-starting-point-fawn/)
 - **Meow** (Tier 0) — exposed Telnet → passwordless root · [read](https://blackhawkyama.github.io/posts/htb-starting-point-meow/)
 
-Every post runs **recon → exploitation → impact → root-cause remediation**. The thread across all of them: *untrusted input or access reaching a trusted context.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
+Every hands-on write-up runs **recon → exploitation → impact → root-cause remediation**. The thread across all of them: *untrusted input or access reaching a trusted context.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
 
 ---
 
