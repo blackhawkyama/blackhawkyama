@@ -5,13 +5,13 @@
 
 ---
 
-Driven security enthusiast focused on **offensive security** and **web/API application testing**. Actively building hands-on skills through **Hack The Box**, the **PortSwigger Web Security Academy**, and **authorized bug bounty testing on HackerOne & Bugcrowd** — running the full workflow (recon → scope → Burp proxy/Repeater → access-control, IDOR/BOLA & GraphQL API testing) against vulnerable and in-scope systems in legal, controlled environments, with disciplined respect for scope and safe-harbor rules. Working toward industry certifications and eager to bring relentless curiosity, solid fundamentals, and a defender-aware mindset to a pentest or SOC team.
+Driven security enthusiast focused on **offensive security**, **web/API application testing**, and **responsible coordinated disclosure**. Actively building hands-on skills through **Hack The Box**, the **PortSwigger Web Security Academy**, and **authorized bug bounty testing on HackerOne & Bugcrowd** — running the full workflow (recon → scope → Burp proxy/Repeater → access-control, IDOR/BOLA & GraphQL API testing) against vulnerable and in-scope systems in legal, controlled environments, with disciplined respect for scope and safe-harbor rules. Also conducting **security research with coordinated disclosure** (private GitHub Security Advisories, vendor embargoes, responsible timelines) on open-source projects. Working toward industry certifications and eager to bring relentless curiosity, solid fundamentals, and a defender-aware mindset to a pentest, security research, or SOC team.
 
 ---
 
-### 🧠 Also building — AI/ML engineering
+### 🧠 Also building — AI/ML security & eval
 
-Alongside offensive security, I build AI tools — and the eval and security tooling to keep them honest — increasingly at the **intersection of security and AI**.
+Alongside offensive security, I build AI tools — and the eval and security tooling to keep them honest. Focus: **measuring and defending LLM systems** against prompt injection, jailbreaks, hallucination, and data leakage — increasingly at the **intersection of security and AI**.
 
 - **[assay](https://github.com/blackhawkyama/assay)** — a from-scratch **LLM-evaluation framework**: versioned golden datasets, deterministic **and** LLM-as-judge scorers, position-bias-mitigated pairwise comparison, regression detection, and a CI gate. Answers the question every model change raises — *did it get better or worse?* · Python · Pydantic · Anthropic API · tested.
 - **[recce](https://github.com/blackhawkyama/recce)** — an **autonomous reconnaissance agent** for authorized targets: a real plan → enumerate → hypothesize → hand-off loop with tool-use, failure recovery, and schema-validated output. Recon only, human-gated. *(security × AI)*
