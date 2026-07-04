@@ -5,7 +5,7 @@
 
 ---
 
-Driven security enthusiast focused on **offensive security**. Actively building hands-on skills through **Hack The Box**, **TryHackMe**, and CTF challenges — applying real attack techniques against vulnerable systems in legal, controlled environments. Working toward industry certifications and eager to bring relentless curiosity, solid fundamentals, and a defender-aware mindset to a pentest or SOC team.
+Driven security enthusiast focused on **offensive security** and **web/API application testing**. Actively building hands-on skills through **Hack The Box**, the **PortSwigger Web Security Academy**, and **authorized bug bounty testing on HackerOne & Bugcrowd** — running the full workflow (recon → scope → Burp proxy/Repeater → access-control, IDOR/BOLA & GraphQL API testing) against vulnerable and in-scope systems in legal, controlled environments, with disciplined respect for scope and safe-harbor rules. Working toward industry certifications and eager to bring relentless curiosity, solid fundamentals, and a defender-aware mindset to a pentest or SOC team.
 
 ---
 
