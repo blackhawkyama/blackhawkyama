@@ -1,0 +1,99 @@
+{
+  "loops": {
+    "testing": {
+      "name": "Recurring Testing & CI Checks",
+      "pattern": 1,
+      "enabled": false,
+      "schedule": "0 * * * *",
+      "goal": "all tests pass + coverage > 80%",
+      "max_iterations": 5,
+      "budget_per_run": 5,
+      "budget_weekly_cap": 20,
+      "commands": [
+        "npm test",
+        "npm run coverage"
+      ],
+      "verifier": "coverage > 80%",
+      "memory_file": ".loop-memory.md"
+    },
+    "quality": {
+      "name": "Code Quality Loops",
+      "pattern": 2,
+      "enabled": false,
+      "schedule": "0 */6 * * *",
+      "goal": "lint clean + type-check green",
+      "max_iterations": 3,
+      "budget_per_run": 3,
+      "budget_weekly_cap": 15,
+      "commands": [
+        "npm run lint",
+        "npm run type-check"
+      ],
+      "verifier": "lint exit code 0",
+      "memory_file": ".loop-memory.md"
+    },
+    "dependencies": {
+      "name": "Dependency Management",
+      "pattern": 3,
+      "enabled": false,
+      "schedule": "0 0 * * 0",
+      "goal": "audit clean + patches applied",
+      "max_iterations": 2,
+      "budget_per_run": 8,
+      "budget_weekly_cap": 16,
+      "commands": [
+        "npm audit",
+        "npm outdated"
+      ],
+      "verifier": "npm audit exit code 0",
+      "memory_file": ".loop-memory.md"
+    },
+    "progress": {
+      "name": "Progress Tracking & Dashboards",
+      "pattern": 4,
+      "enabled": false,
+      "schedule": "0 * * * *",
+      "goal": "metrics generated + progress.md updated",
+      "max_iterations": 1,
+      "budget_per_run": 2,
+      "budget_weekly_cap": 14,
+      "commands": [
+        "generate progress report"
+      ],
+      "verifier": "progress.md exists and recent",
+      "memory_file": ".loop-memory.md"
+    },
+    "documentation": {
+      "name": "Documentation Maintenance",
+      "pattern": 5,
+      "enabled": false,
+      "schedule": "0 0 * * 0",
+      "goal": "README + docs match code",
+      "max_iterations": 1,
+      "budget_per_run": 2,
+      "budget_weekly_cap": 6,
+      "commands": [
+        "check docstrings",
+        "verify examples"
+      ],
+      "verifier": "docs match code signatures",
+      "memory_file": ".loop-memory.md"
+    }
+  },
+  "global": {
+    "repo": "blackhawkyama/blackhawkyama",
+    "memory_directory": "./",
+    "token_budget_mode": "conservative",
+    "max_concurrent_loops": 2,
+    "rollback_enabled": true,
+    "alert_on_failure": true
+  },
+  "setup_checklist": {
+    "claude_md_created": true,
+    "memory_file_created": true,
+    "config_file_created": true,
+    "triggers_scheduled": false,
+    "first_run_tested": false,
+    "monitoring_enabled": false
+  }
+}
