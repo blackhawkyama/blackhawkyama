@@ -51,47 +51,51 @@
     "progress": {
       "name": "Progress Tracking & Dashboards",
       "pattern": 4,
-      "enabled": false,
-      "schedule": "0 * * * *",
+      "enabled": true,
+      "schedule": "0 0 * * 0",
       "goal": "metrics generated + progress.md updated",
       "max_iterations": 1,
-      "budget_per_run": 2,
-      "budget_weekly_cap": 14,
+      "budget_per_run": 1,
+      "budget_monthly_cap": 4,
       "commands": [
         "generate progress report"
       ],
       "verifier": "progress.md exists and recent",
-      "memory_file": ".loop-memory.md"
+      "memory_file": ".loop-memory.md",
+      "note": "Weekly Sunday 00:00 UTC - minimal tokens"
     },
     "documentation": {
       "name": "Documentation Maintenance",
       "pattern": 5,
-      "enabled": false,
-      "schedule": "0 0 * * 0",
+      "enabled": true,
+      "schedule": "0 1 * * 0",
       "goal": "README + docs match code",
       "max_iterations": 1,
-      "budget_per_run": 2,
-      "budget_weekly_cap": 6,
+      "budget_per_run": 1,
+      "budget_monthly_cap": 4,
       "commands": [
         "check docstrings",
         "verify examples"
       ],
       "verifier": "docs match code signatures",
-      "memory_file": ".loop-memory.md"
+      "memory_file": ".loop-memory.md",
+      "note": "Weekly Sunday 01:00 UTC - minimal tokens"
     }
   },
   "global": {
     "repo": "blackhawkyama/blackhawkyama",
     "memory_directory": "./",
-    "token_budget_mode": "conservative",
-    "max_concurrent_loops": 2,
+    "token_budget_mode": "ultra_conservative",
+    "max_concurrent_loops": 1,
     "rollback_enabled": true,
-    "alert_on_failure": true
+    "alert_on_failure": true,
+    "notes": "Lean setup for max plan - only patterns 4 & 5 enabled (weekly, minimal tokens)"
   },
   "setup_checklist": {
     "claude_md_created": true,
     "memory_file_created": true,
     "config_file_created": true,
+    "lean_setup_optimized": true,
     "triggers_scheduled": false,
     "first_run_tested": false,
     "monitoring_enabled": false

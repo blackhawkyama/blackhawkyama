@@ -16,116 +16,71 @@ This document enables autonomous loops via `/loop` and `/schedule` for recurring
 
 ## Loop Patterns (5 Efficiency Workflows)
 
-### 1. Recurring Testing & CI Checks
+### 1. Recurring Testing & CI Checks ~~[DISABLED - Manual Only]~~
 **Goal**: Run tests, detect failures, fix common issues autonomously.
 
-**Loop Prompt**:
-```
-/loop 1h
-/goal all tests pass + coverage > 80%
-Run: npm test && npm run coverage
-If failures: auto-fix linting issues, run tests again.
-Stop if: tests green, coverage > 80%, or 5 iterations.
-Memory: .loop-memory.md tracks test runs + fixes applied.
-```
-
-**Config**:
-- Trigger: Every 1 hour
-- Verifier: test output + coverage report
-- Stop Rule: success (tests green + 80% coverage) OR 5 iterations
-- Budget: $5 per loop (allow small fixes)
+~~Run manually during development. Too token-expensive for max plan.~~
 
 ---
 
-### 2. Code Quality Loops
+### 2. Code Quality Loops ~~[DISABLED - Manual Only]~~
 **Goal**: Continuous code review, linting, refactoring.
 
-**Loop Prompt**:
-```
-/loop 6h
-/goal code passes linting + no high-severity issues
-Run: npm run lint && npm run type-check
-Find: unused variables, dead code, complexity hotspots
-Fix: apply auto-fixable issues, suggest refactors
-Memory: .loop-memory.md tracks files modified + improvements
-Stop if: all checks pass, no improvements found, or 3 iterations
-```
-
-**Config**:
-- Trigger: Every 6 hours
-- Verifier: lint results, type-check, complexity metrics
-- Stop Rule: success (lint green + type-check green) OR 3 iterations OR no new issues
-- Budget: $3 per loop
+~~Run manually during development. Too token-expensive for max plan.~~
 
 ---
 
-### 3. Dependency Management
+### 3. Dependency Management ~~[DISABLED - Manual Only]~~
 **Goal**: Regular updates, security scans, compatibility checks.
 
-**Loop Prompt**:
-```
-/loop 7d
-/goal all dependencies current + no security vulnerabilities
-Run: npm audit && npm outdated
-Check: semver compatibility, breaking changes
-Update: patch + minor versions, test after each
-Memory: .loop-memory.md tracks dependency updates + audit results
-Stop if: audit clean + all patches applied, or 2 iterations
-```
-
-**Config**:
-- Trigger: Every 7 days
-- Verifier: npm audit output, test suite
-- Stop Rule: success (audit clean) OR 2 iterations OR breaking changes found (manual review)
-- Budget: $8 per loop
+~~Run manually or quarterly. Too token-expensive for max plan.~~
 
 ---
 
-### 4. Progress Tracking & Dashboards
+### 4. Progress Tracking & Dashboards ✅ [ENABLED]
 **Goal**: Automated status dashboards, burndown charts, deployment monitoring.
 
 **Loop Prompt**:
 ```
-/loop 1h
-/goal generate updated progress metrics + deployment status
+/loop progress-dashboard
+/goal generate updated progress metrics
 Run: extract from .loop-memory.md files across all repos
 Generate: 
-  - Test pass rate (24h, 7d)
-  - Deployment success rate
+  - Test pass rate (7d)
   - Issue resolution velocity
-  - Code quality trend
-Output: progress.md with metrics + charts
-Memory: progress.md appends historical records
-Stop if: metrics generated successfully
+  - Code quality snapshot
+Output: progress.md with latest metrics
+Stop if: metrics generated successfully (1 iteration max)
 ```
 
 **Config**:
-- Trigger: Every 1 hour
-- Verifier: progress.md exists + has recent data
+- Trigger: Every Sunday @ midnight (0 0 * * 0)
+- Verifier: progress.md exists + recent timestamp
 - Stop Rule: success (metrics generated) OR 1 iteration
-- Budget: $2 per loop
+- Budget: $1 per run, $4/month cap
+- Max iterations: 1
 
 ---
 
-### 5. Documentation Maintenance
+### 5. Documentation Maintenance ✅ [ENABLED]
 **Goal**: Keep docs in sync with code changes, detect outdated sections.
 
 **Loop Prompt**:
 ```
-/loop 3d
-/goal README + API docs match current code
-Check: function signatures, endpoints, examples
-Find: outdated sections, missing docstrings
-Update: docs to match implementation, suggest refactors
-Memory: .loop-memory.md tracks doc updates + issues
-Stop if: all docs current, no mismatches, or 1 iteration
+/loop documentation-check
+/goal README + docs match current code
+Check: function signatures, examples, outdated sections
+Find: missing docstrings, broken links
+Suggest: refactors if found
+Stop if: docs current or 1 iteration (1 shot only)
 ```
 
 **Config**:
-- Trigger: Every 3 days
-- Verifier: code-to-doc diff, docstring coverage
-- Stop Rule: success (docs match code) OR 1 iteration
-- Budget: $2 per loop
+- Trigger: Every Sunday @ 1am (0 1 * * 0)
+- Verifier: code-to-doc diff check
+- Stop Rule: success (docs match) OR 1 iteration
+- Budget: $1 per run, $4/month cap
+- Max iterations: 1
 
 ---
 
@@ -168,12 +123,13 @@ Track each loop iteration:
 - Manual error found (e.g., breaking change in dependency)
 - Token budget exceeded
 
-**Token Budget Examples**:
-- Pattern 1 (Testing): $5 per run, $20 weekly cap
-- Pattern 2 (Quality): $3 per run, $15 weekly cap
-- Pattern 3 (Dependencies): $8 per run, $16 weekly cap
-- Pattern 4 (Progress): $2 per run, $14 weekly cap
-- Pattern 5 (Docs): $2 per run, $6 weekly cap
+**Token Budget Examples** (Lean Setup - Max Plan Optimized):
+- ~~Pattern 1 (Testing): DISABLED~~
+- ~~Pattern 2 (Quality): DISABLED~~
+- ~~Pattern 3 (Dependencies): DISABLED~~
+- Pattern 4 (Progress): $1 per run, $4/month cap (weekly)
+- Pattern 5 (Docs): $1 per run, $4/month cap (weekly)
+- **Total**: ~8 tokens/month (~0.2% of typical max plan)
 
 ---
 
