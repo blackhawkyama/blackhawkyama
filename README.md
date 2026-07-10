@@ -33,7 +33,13 @@ Alongside offensive security, I build AI tools — and the eval and security too
 - **SQL injection** — hidden-data retrieval & auth bypass via `' OR 1=1--` · [read](https://blackhawkyama.github.io/posts/portswigger-sqli-retrieve-hidden-data/)
 
 **Security Research & Coordinated Disclosure**
-- **CWE-125: Heap Buffer Over-Read in llama.cpp GGUF Parser** — identified and fixed out-of-bounds memory read in special token ID validation · [PR #25475](https://github.com/ggml-org/llama.cpp/pull/25475) · ASAN-verified crash in `llama_vocab::impl::load()` when processing malformed GGUF files · Coordinated disclosure with maintainer (ggerganov@gmail.com) · Severity: Moderate
+
+Open-source memory-safety and input-validation findings, reported under responsible timelines.
+
+- **CWE-125 · Heap Buffer Over-Read — llama.cpp GGUF parser** · *Severity: Moderate* · [PR #25475](https://github.com/ggml-org/llama.cpp/pull/25475)
+  - **Root cause:** out-of-bounds memory read in special-token-ID validation when parsing a malformed GGUF file.
+  - **Impact:** ASAN-verified crash in `llama_vocab::impl::load()` triggered by attacker-controlled model input.
+  - **Response:** identified, fixed, and reported via coordinated disclosure with the upstream maintainer.
 
 **Hack The Box — Starting Point**
 - **Redeemer** (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
