@@ -32,9 +32,6 @@ Alongside offensive security, I build AI tools — and the eval and security too
 - **Reflected XSS** — script injected into an HTML context → arbitrary JS in the victim's browser · [read](https://blackhawkyama.github.io/posts/portswigger-xss-reflected/)
 - **SQL injection** — hidden-data retrieval & auth bypass via `' OR 1=1--` · [read](https://blackhawkyama.github.io/posts/portswigger-sqli-retrieve-hidden-data/)
 
-**Security Research & Coordinated Disclosure**
-- **CWE-125: Heap Buffer Over-Read in llama.cpp GGUF Parser** — identified and fixed out-of-bounds memory read in special token ID validation · [PR #25475](https://github.com/ggml-org/llama.cpp/pull/25475) · ASAN-verified crash in `llama_vocab::impl::load()` when processing malformed GGUF files · Coordinated disclosure with maintainer (ggerganov@gmail.com) · Severity: Moderate
-
 **Hack The Box — Starting Point**
 - **Redeemer** (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
 - **Dancing** (Tier 0) — SMB null session → anonymous share · [read](https://blackhawkyama.github.io/posts/htb-starting-point-dancing/)
