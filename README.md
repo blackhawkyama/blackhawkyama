@@ -35,6 +35,10 @@ Alongside offensive security, I build AI tools — and the eval and security too
 **Security Research & Coordinated Disclosure**
 - **CWE-125: Heap Buffer Over-Read in llama.cpp GGUF Parser** — identified and fixed out-of-bounds memory read in special token ID validation · [PR #25475](https://github.com/ggml-org/llama.cpp/pull/25475) · ASAN-verified crash in `llama_vocab::impl::load()` when processing malformed GGUF files · Coordinated disclosure with maintainer (ggerganov@gmail.com) · Severity: Moderate
 
+**Upstream Framework Contributions**
+- **NVIDIA/garak (ReconProbe)** — hypothesis-driven LLM vulnerability scanner · [PR #1966](https://github.com/NVIDIA/garak/pull/1966) · Six-phase bug bounty methodology mapped to garak's native Probe plugin model · Tests, documentation, and submission-ready findings export
+- **microsoft/PyRIT (ReconStrategy)** — attack strategy for red-team toolkit · [PR #2198](https://github.com/microsoft/PyRIT/pull/2198) · Structured LLM security testing with scope enforcement, phase tracking, and evidence logging
+
 **Hack The Box — Starting Point**
 - **Redeemer** (Tier 1) — unauthenticated Redis → flag · [read](https://blackhawkyama.github.io/posts/htb-starting-point-redeemer/)
 - **Dancing** (Tier 0) — SMB null session → anonymous share · [read](https://blackhawkyama.github.io/posts/htb-starting-point-dancing/)
