@@ -40,6 +40,11 @@ Alongside offensive security, I build AI tools — and the eval and security too
 
 Every post runs **recon → exploitation → impact → root-cause remediation**. The thread across all of them: *untrusted input or access reaching a trusted context.* Full index → **[blackhawkyama.github.io](https://blackhawkyama.github.io)**
 
+**Security Research & Upstream Contributions**
+- **CWE-125: Heap Buffer Over-Read in llama.cpp** — identified out-of-bounds memory read in GGUF parser · [PR #25475](https://github.com/ggml-org/llama.cpp/pull/25475) · Coordinated disclosure with maintainer
+- **NVIDIA/garak (ReconProbe)** — hypothesis-driven LLM vulnerability scanner · [PR #1966](https://github.com/NVIDIA/garak/pull/1966) · Six-phase bug bounty methodology for garak's native Probe plugin model
+- **microsoft/PyRIT (ReconStrategy)** — attack strategy for red-team toolkit · [PR #2198](https://github.com/microsoft/PyRIT/pull/2198) · Structured LLM security testing with scope enforcement and phase tracking
+
 ---
 
 ### 🔧 Tools & Tech
