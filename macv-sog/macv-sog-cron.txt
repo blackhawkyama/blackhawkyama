@@ -1,0 +1,6 @@
+# MACV SOG Automated Scanning Schedule
+# Recon pipeline: every 6 hours
+0 */6 * * * /home/ec2-user/macv-sog/scripts/recon.py >> /home/ec2-user/macv-sog/logs/recon.log 2>&1
+
+# Vulnerability scanning: every 12 hours
+0 */12 * * * /home/ec2-user/macv-sog/scripts/scan.py >> /home/ec2-user/macv-sog/logs/scan.log 2>&1
