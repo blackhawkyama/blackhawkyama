@@ -10,7 +10,7 @@
 
 ## 🆕 Running Log
 
-Newest first. Add a row every time you watch something, bump the episode count above, and update the Resume table.
+Newest first. Add a row every time you watch something — **the Title column always gets filled in, for any show** (copy it from that show's *Next episode* cell in the Resume table). Then bump the episode count above and update the show's Resume row, looking up the new next-episode title (TheTVDB / TVmaze) so it's ready for the next watch. Some shows have officially unnamed episodes (e.g. SAS Rogue Heroes, Babylon Berlin) — for those, "Episode N" *is* the title.
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
@@ -22,7 +22,7 @@ Newest first. Add a row every time you watch something, bump the episode count a
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Cape Fear | S1E3 | 2/6 | Phantom Sensations | Currently watching |
-| Death in Paradise | S9E2 | 64/120 | — | Currently watching |
+| Death in Paradise | S9E2 | 64/120 | A Murder in Portrait | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E2 | 9/11 | Downer Town | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
