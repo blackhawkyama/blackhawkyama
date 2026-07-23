@@ -1,0 +1,1002 @@
+<title>TV Time — Watch Log Command Board</title>
+<style>
+  :root{
+    --bg:#05080b; --panel:#0a1118; --panel-2:#0d1720; --stripe:#0f1a23;
+    --ink:#d2e0e8; --ink-2:#7f97a4; --ink-3:#4e626e;
+    --border:#16242e; --border-2:#213340;
+    --phos:#31e6a0;      /* live / good — phosphor green */
+    --amber:#ffb02c;     /* signature accent / warn */
+    --cyan:#39c9e8;      /* info / tracked */
+    --crit:#ff5066;      /* blocked / critical */
+    --hold:#66808e;      /* dormant / open */
+    --brand:var(--amber);
+    --good:var(--phos); --warn:var(--amber); --info:var(--cyan);
+    --font-ui:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --radius:6px;
+    --glow-phos:0 0 6px color-mix(in srgb,var(--phos) 60%,transparent);
+    --glow-amber:0 0 6px color-mix(in srgb,var(--amber) 55%,transparent);
+  }
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);
+    line-height:1.5;-webkit-font-smoothing:antialiased;position:relative;min-height:100vh;}
+  /* tactical grid + vignette backdrop */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(color-mix(in srgb,var(--phos) 4%,transparent) 1px,transparent 1px),
+      linear-gradient(90deg,color-mix(in srgb,var(--phos) 4%,transparent) 1px,transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 85%);
+            mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 85%);}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% -10%,color-mix(in srgb,var(--amber) 7%,transparent),transparent 55%);}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px;position:relative;z-index:1;}
+  a{color:var(--cyan);text-decoration:none;}
+  a:hover{text-decoration:underline;text-shadow:0 0 6px color-mix(in srgb,var(--cyan) 50%,transparent);}
+  a:focus-visible{outline:1px solid var(--cyan);outline-offset:2px;}
+  .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+
+  /* ── ops bar ────────────────────────────────────────────── */
+  .opsbar{display:flex;justify-content:space-between;align-items:center;gap:12px;
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-3);border-bottom:1px solid var(--border);padding:9px 2px;flex-wrap:wrap;}
+  .opsbar .l{color:var(--amber);font-weight:600;}
+  .opsbar .l b{color:var(--ink-2);font-weight:600;}
+  .opsbar .r{display:inline-flex;align-items:center;gap:8px;color:var(--phos);}
+  .opsbar .r .led{width:7px;height:7px;border-radius:50%;background:var(--phos);
+    box-shadow:var(--glow-phos);animation:blip 2.4s ease-out infinite;}
+  @keyframes blip{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.opsbar .r .led,.updated-banner .dotlive{animation:none;}}
+
+  /* ── header ─────────────────────────────────────────────── */
+  header.top{display:flex;justify-content:space-between;align-items:flex-end;
+    gap:20px;flex-wrap:wrap;padding:22px 0 18px;border-bottom:1px solid var(--border);margin-bottom:22px;}
+  .brand{display:flex;align-items:center;gap:14px;}
+  .mark{width:42px;height:42px;border-radius:8px;position:relative;flex:none;
+    display:grid;place-items:center;color:var(--amber);font-family:var(--font-mono);font-weight:800;font-size:20px;
+    background:color-mix(in srgb,var(--amber) 8%,transparent);
+    border:1px solid color-mix(in srgb,var(--amber) 45%,transparent);
+    box-shadow:inset 0 0 14px color-mix(in srgb,var(--amber) 12%,transparent),var(--glow-amber);}
+  .mark::before,.mark::after{content:"";position:absolute;background:var(--amber);opacity:.8;}
+  .mark::before{width:9px;height:1px;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 -14px 0 var(--amber),0 14px 0 var(--amber);}
+  .mark::after{height:9px;width:1px;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:-14px 0 0 var(--amber),14px 0 0 var(--amber);}
+  h1{font-size:21px;font-weight:750;letter-spacing:.01em;margin:0;text-wrap:balance;
+    font-family:var(--font-mono);text-transform:uppercase;}
+  h1 .accent{color:var(--amber);text-shadow:var(--glow-amber);}
+  .sub{color:var(--ink-2);font-size:12px;margin-top:3px;font-family:var(--font-mono);letter-spacing:.02em;}
+  .asof{text-align:right;}
+  .asof .repo{margin-top:8px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);}
+  .asof .repo b{color:var(--cyan);font-weight:600;}
+
+  /* clock */
+  @font-face{
+    font-family:'StencilClock';
+    font-style:normal;font-weight:800;font-display:swap;
+    src:url(data:font/woff2;base64,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) format('woff2');
+    unicode-range:U+0030-003A;
+  }
+  .clock-big{display:flex;flex-direction:column;align-items:flex-end;line-height:1;}
+  .clock-big .cdate{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--cyan);
+    letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;}
+  .clock-big .ctime{font-family:'StencilClock',var(--font-mono);font-weight:800;font-size:64px;
+    letter-spacing:.03em;font-variant-numeric:tabular-nums;
+    display:flex;align-items:baseline;gap:7px;color:var(--phos);
+    text-shadow:0 0 18px color-mix(in srgb,var(--phos) 45%,transparent);}
+  .clock-big .csec{font-size:22px;font-weight:700;color:var(--amber);letter-spacing:-.01em;text-shadow:var(--glow-amber);}
+  .clock-big .czone{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.14em;}
+  @media (max-width:860px){
+    .clock-big{align-items:flex-start;}
+    .clock-big .ctime{font-size:44px;}
+  }
+
+  .updated-banner{display:inline-flex;align-items:center;gap:9px;margin:0 0 18px;
+    font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--crit);background:color-mix(in srgb,var(--crit) 10%,transparent);
+    border:1px solid color-mix(in srgb,var(--crit) 34%,transparent);
+    border-radius:4px;padding:6px 12px;}
+  .updated-banner strong{font-weight:700;color:var(--crit);}
+  .updated-banner .rel{color:color-mix(in srgb,var(--crit) 68%,var(--ink-2));font-weight:500;}
+  .updated-banner .dotlive{width:7px;height:7px;border-radius:50%;background:var(--crit);
+    box-shadow:0 0 6px var(--crit);animation:pulse-red 2s ease-out infinite;}
+  @keyframes pulse-red{
+    0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--crit) 55%,transparent);}
+    70%{box-shadow:0 0 0 6px color-mix(in srgb,var(--crit) 0%,transparent);}
+    100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--crit) 0%,transparent);}}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 22px;font-family:var(--font-mono);
+    font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);}
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;box-shadow:0 0 5px currentColor;}
+
+  /* ── KPIs ───────────────────────────────────────────────── */
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:14px 15px;position:relative;overflow:hidden;}
+  .kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent,var(--amber));
+    box-shadow:0 0 8px var(--accent,var(--amber));}
+  .kpi .n{font-family:var(--font-mono);font-size:30px;font-weight:800;letter-spacing:-.01em;
+    font-variant-numeric:tabular-nums;line-height:1.05;color:var(--accent,var(--ink));
+    text-shadow:0 0 12px color-mix(in srgb,var(--accent,#fff) 35%,transparent);}
+  .kpi .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-2);margin-top:5px;}
+  .kpi .meta{font-size:10.5px;color:var(--ink-3);margin-top:7px;line-height:1.45;font-family:var(--font-mono);}
+
+  /* ── section headers ────────────────────────────────────── */
+  h2.sec{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-2);margin:30px 0 13px;display:flex;align-items:center;gap:11px;}
+  h2.sec .pre{color:var(--amber);text-shadow:var(--glow-amber);}
+  h2.sec::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border-2),transparent);}
+
+  /* ── cards / panels ─────────────────────────────────────── */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:17px 17px 15px;position:relative;}
+  /* corner ticks */
+  .card::before,.card::after{content:"";position:absolute;width:9px;height:9px;pointer-events:none;opacity:.55;}
+  .card::before{top:6px;left:6px;border-top:1px solid var(--amber);border-left:1px solid var(--amber);}
+  .card::after{bottom:6px;right:6px;border-bottom:1px solid var(--amber);border-right:1px solid var(--amber);}
+  .flag{border-color:color-mix(in srgb,var(--amber) 32%,var(--border));
+    box-shadow:inset 0 0 30px color-mix(in srgb,var(--amber) 5%,transparent);}
+  .card h3{margin:0 0 3px;font-size:14.5px;font-weight:680;letter-spacing:-.01em;font-family:var(--font-mono);}
+  .card .id{font-family:var(--font-mono);font-size:10.5px;color:var(--amber);letter-spacing:.06em;}
+  .card p.desc{font-size:12px;color:var(--ink-2);margin:9px 0 12px;line-height:1.5;}
+  .eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--amber);font-weight:700;}
+
+  .chip{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:10px;font-weight:600;
+    letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:3px;line-height:1.5;white-space:nowrap;
+    background:color-mix(in srgb,var(--c,var(--hold)) 13%,transparent);
+    color:var(--c,var(--hold));border:1px solid color-mix(in srgb,var(--c,var(--hold)) 38%,transparent);}
+  .chip.solid{background:color-mix(in srgb,var(--c) 20%,transparent);
+    border-color:var(--c);box-shadow:0 0 8px color-mix(in srgb,var(--c) 30%,transparent);
+    color:color-mix(in srgb,var(--c) 88%,#fff);}
+  .c-good{--c:var(--phos);} .c-warn{--c:var(--amber);} .c-crit{--c:var(--crit);}
+  .c-hold{--c:var(--hold);} .c-info{--c:var(--cyan);} .c-brand{--c:var(--amber);}
+  .phases{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+
+  /* ── DR pipeline ────────────────────────────────────────── */
+  .pipe{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:7px;}
+  .leg{flex:1;min-width:150px;padding:12px 14px;border-radius:4px;position:relative;
+    background:var(--panel-2);border:1px solid var(--border);}
+  .leg .step{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;}
+  .leg .title{font-size:12.5px;font-weight:640;margin:4px 0 8px;letter-spacing:-.01em;color:var(--ink);}
+  .leg.done{border-color:color-mix(in srgb,var(--phos) 28%,var(--border));
+    background:color-mix(in srgb,var(--phos) 6%,var(--panel-2));}
+  .leg.next{border-color:color-mix(in srgb,var(--amber) 34%,var(--border));
+    background:color-mix(in srgb,var(--amber) 7%,var(--panel-2));}
+
+  /* ── T-board table ──────────────────────────────────────── */
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel);}
+  table{border-collapse:collapse;width:100%;font-size:12px;min-width:660px;}
+  thead th{text-align:left;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);font-weight:700;padding:11px 14px;border-bottom:1px solid var(--border-2);
+    background:var(--panel-2);position:sticky;top:0;}
+  tbody td{padding:9px 14px;border-bottom:1px solid var(--stripe);vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr{border-left:2px solid transparent;}
+  tbody tr:hover{background:color-mix(in srgb,var(--amber) 5%,transparent);}
+  tbody tr:hover td.tnum{color:var(--amber);}
+  td.tnum{font-family:var(--font-mono);font-weight:700;color:var(--ink);white-space:nowrap;}
+  td.task{color:var(--ink);}
+  .card .id, td .id{font-family:var(--font-mono);font-size:10px;color:var(--ink-3);letter-spacing:0;}
+  td.iss a{font-family:var(--font-mono);font-size:11px;}
+  .lane{font-size:10px;font-family:var(--font-mono);color:var(--ink-3);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;}
+
+  .rowlist{display:flex;flex-direction:column;gap:9px;margin-top:11px;}
+  .rowitem{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    font-size:12px;padding-bottom:9px;border-bottom:1px solid var(--stripe);}
+  .rowitem:last-child{border-bottom:none;padding-bottom:0;}
+  .rowitem .k{color:var(--ink);font-weight:550;font-family:var(--font-mono);font-size:11.5px;}
+  .rowitem .k small{display:block;color:var(--ink-3);font-weight:400;font-size:10px;margin-top:2px;font-family:var(--font-ui);letter-spacing:.02em;}
+
+  .foot{margin-top:34px;padding-top:15px;border-top:1px solid var(--border);
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+
+  @media (max-width:860px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .grid-2,.grid-3{grid-template-columns:1fr;}
+  }
+</style>
+<style>
+  /* archive list additions */
+  details.arch{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:0;margin-top:14px;overflow:hidden;}
+  details.arch>summary{cursor:pointer;list-style:none;padding:13px 16px;font-family:var(--font-mono);
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+    display:flex;align-items:center;gap:10px;}
+  details.arch>summary::before{content:"▸";color:var(--amber);text-shadow:var(--glow-amber);transition:none;}
+  details.arch[open]>summary::before{content:"▾";}
+  details.arch>summary .cnt{color:var(--amber);}
+  details.arch>summary:hover{background:color-mix(in srgb,var(--amber) 5%,transparent);}
+  .archlist{columns:16em;column-gap:26px;padding:6px 18px 16px;font-size:11.5px;color:var(--ink-2);
+    border-top:1px solid var(--stripe);}
+  .archlist div{break-inside:avoid;padding:2px 0;}
+  .archlist .pg{font-family:var(--font-mono);color:var(--phos);font-size:10px;}
+  .archlist .yr{font-family:var(--font-mono);color:var(--ink-3);font-size:10px;}
+</style>
+
+<div class="wrap">
+  <div class="opsbar">
+    <span class="l">EGAN OPS<b> // TV TIME WATCH RECORDS</b> · PERSONAL ARCHIVE</span>
+    <span class="r"><span class="led" aria-hidden="true"></span> ARCHIVE SECURE · LIVE</span>
+  </div>
+
+  <header class="top">
+    <div class="brand">
+      <div class="mark">▶</div>
+      <div>
+        <h1>Watch Log <span class="accent">//</span> Command Board</h1>
+        <div class="sub">Running watch record · reconstructed after the TV Time shutdown (Jul 15, 2026)</div>
+      </div>
+    </div>
+    <div class="asof">
+      <div class="clock-big" id="ptclock" title="Live Pacific time">
+        <div class="cdate" id="ptclock-date">--- --- --</div>
+        <div class="ctime"><span id="ptclock-time">--:--</span><span class="csec" id="ptclock-sec"></span> <span class="czone" id="ptclock-zone">PT</span></div>
+      </div>
+      <div class="repo">source <b>blackhawkyama/blackhawkyama · WATCH_LOG.md</b></div>
+    </div>
+  </header>
+
+  <div class="updated-banner" id="updated-banner" data-updated="2026-07-23T14:15:36-0700">
+    <span class="dotlive" aria-hidden="true"></span>
+    <span>Last sync <strong id="updated-abs">Jul 23, 2026 · 2:15 PM PT</strong> <span class="rel" id="updated-rel"></span></span>
+  </div>
+
+  <div class="legend" aria-label="status legend">
+    <span><i class="dot" style="background:var(--phos);color:var(--phos)"></i> Watched / complete</span>
+    <span><i class="dot" style="background:var(--amber);color:var(--amber)"></i> Currently watching</span>
+    <span><i class="dot" style="background:var(--cyan);color:var(--cyan)"></i> Tracked</span>
+    <span><i class="dot" style="background:var(--hold);color:var(--hold)"></i> Paused</span>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi" style="--accent:var(--phos)"><div class="n">434</div><div class="lbl">Episodes watched</div><div class="meta">+1 · DiP S9E1 · Jul 23</div></div>
+    <div class="kpi" style="--accent:var(--amber)"><div class="n">29</div><div class="lbl">Shows in progress</div><div class="meta">9 watching · 20 paused</div></div>
+    <div class="kpi" style="--accent:var(--cyan)"><div class="n">277</div><div class="lbl">Shows followed</div><div class="meta">4 confirmed complete</div></div>
+    <div class="kpi" style="--accent:var(--cyan)"><div class="n">224</div><div class="lbl">Movies tracked</div><div class="meta">full archive below</div></div>
+    <div class="kpi" style="--accent:var(--crit)"><div class="n">49</div><div class="lbl">On watchlist</div><div class="meta">queued for later</div></div>
+  </div>
+
+  <h2 class="sec"><span class="pre">▸</span> Latest intel</h2>
+  <div class="grid-2">
+    <div class="card flag">
+      <h3>Death in Paradise <span class="id">S9E1 · La Murder Le Diable</span></h3>
+      <p class="desc">First watch logged since the TV Time shutdown. Progress moved 63/120 → 64/120 and the case file is back on active status.</p>
+      <div class="phases">
+        <span class="chip c-good solid">✓ watched Jul 23, 2026</span>
+        <span class="chip c-warn">now 64/120</span>
+        <span class="chip c-info">next · S9E2 A Murder in Portrait</span>
+      </div>
+    </div>
+    <div class="card flag">
+      <h3>Confirmed completed <span class="id">4 of 277 · cached data only</span></h3>
+      <p class="desc">Completion was cached for only 32 shows, so these 4 are the confirmed finishes. Blank progress elsewhere means "unknown," not "unwatched."</p>
+      <div class="phases">
+        <span class="chip c-good">✓ Black Snow</span>
+        <span class="chip c-good">✓ Criminal Record</span>
+        <span class="chip c-good">✓ House of the Dragon</span>
+        <span class="chip c-good">✓ The Agency (2024)</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec"><span class="pre">▸</span> Death in Paradise · case progress</h2>
+  <div class="pipe">
+    <div class="leg done">
+      <div class="step">Leg · done</div>
+      <div class="title">Series 1–8</div>
+      <span class="chip c-good solid">✓ 63 eps on record</span>
+    </div>
+    <div class="leg done">
+      <div class="step">Leg · done</div>
+      <div class="title">S9E1 · La Murder Le Diable</div>
+      <span class="chip c-good solid">✓ Jul 23, 2026</span>
+    </div>
+    <div class="leg next">
+      <div class="step">Leg · next</div>
+      <div class="title">S9E2 · A Murder in Portrait</div>
+      <span class="chip c-warn">up next</span>
+    </div>
+    <div class="leg">
+      <div class="step">Capstone</div>
+      <div class="title">Series 9 complete</div>
+      <span class="chip c-hold">71/120</span>
+    </div>
+  </div>
+
+  <h2 class="sec"><span class="pre">▸</span> Resume here · 29 open cases <span style="flex:none;white-space:nowrap;color:var(--ink-3);text-transform:none;letter-spacing:.04em;font-weight:400">every episode named</span></h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Pick up at</th><th>Show</th><th>Progress</th><th>Next episode</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="tnum">S11E1</td><td class="task">Below Deck Mediterranean</td><td class="mono">174/179</td><td>King’s Crash Landing</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S1E3</td><td class="task">Cape Fear</td><td class="mono">2/6</td><td>Phantom Sensations</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S9E2</td><td class="task">Death in Paradise <span class="chip c-good solid" style="margin-left:6px">✓ S9E1 logged</span></td><td class="mono">64/120</td><td>A Murder in Portrait</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S2E4</td><td class="task">SAS Rogue Heroes</td><td class="mono">9/12</td><td>Episode 4</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S2E2</td><td class="task">Sugar (2024)</td><td class="mono">9/11</td><td>Downer Town</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S2E6</td><td class="task">The Agency (2024)</td><td class="mono">20/20</td><td>Officially a Ghost</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S1E2</td><td class="task">The Prisoner</td><td class="mono">1/17</td><td>The Chimes of Big Ben</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S1E5</td><td class="task">When No One Sees Us</td><td class="mono">4/8</td><td>Sergeant Andrew Taylor</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S1E7</td><td class="task">Widow&#x27;s Bay</td><td class="mono">6/10</td><td>Seasickness</td><td><span class="chip c-warn">Watching</span></td></tr>
+        <tr><td class="tnum">S1E2</td><td class="task">Alien: Earth</td><td class="mono">1/8</td><td>Mr. October</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E9</td><td class="task">Arctic Circle</td><td class="mono">8/33</td><td>Murmansk</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S4E8</td><td class="task">Babylon Berlin</td><td class="mono">35/40</td><td>Episode 36</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E4</td><td class="task">Bosch: Legacy</td><td class="mono">3/30</td><td>Horseshoes and Hand Grenades</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E4</td><td class="task">Fallout</td><td class="mono">3/16</td><td>The Ghouls</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S3E9</td><td class="task">Homicide: Life on the Street</td><td class="mono">21/122</td><td>Every Mother&#x27;s Son</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E5</td><td class="task">Hotel Costiera</td><td class="mono">4/6</td><td>Bruno</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S3E5</td><td class="task">Mayor of Kingstown</td><td class="mono">23/40</td><td>Iris</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S2E12</td><td class="task">Moonlighting</td><td class="mono">17/66</td><td>North by North Dipesto</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E2</td><td class="task">Néro the Assassin</td><td class="mono">1/8</td><td>The Witch</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E2</td><td class="task">Sexy Beast</td><td class="mono">1/8</td><td>Donny, Donny, Donny</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S4E10</td><td class="task">Sons of Anarchy</td><td class="mono">48/92</td><td>Hands</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S2E4</td><td class="task">Star Trek: Strange New Worlds</td><td class="mono">13/30</td><td>Among the Lotus Eaters</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E4</td><td class="task">Steal</td><td class="mono">3/6</td><td>Risk On</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E2</td><td class="task">The Last Frontier (2025)</td><td class="mono">1/10</td><td>Wind of Change</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S1E3</td><td class="task">The Last of Us</td><td class="mono">2/16</td><td>Long, Long Time</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S5E7</td><td class="task">The Lone Ranger (1949)</td><td class="mono">15/221</td><td>The Return of Don Pedro O&#x27;Sullivan</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S2E3</td><td class="task">The Rockford Files</td><td class="mono">25/123</td><td>Gearjammers (1)</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S4E8</td><td class="task">The Rookie</td><td class="mono">60/144</td><td>Hit and Run</td><td><span class="chip c-hold">Paused</span></td></tr>
+        <tr><td class="tnum">S2E14</td><td class="task">The X-Files</td><td class="mono">37/220</td><td>Die Hand Die Verletzt</td><td><span class="chip c-hold">Paused</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-top:16px">
+    <div class="card">
+      <div class="eyebrow">Running log</div>
+      <div class="rowlist">
+        <div class="rowitem"><span class="k">Death in Paradise · S9E1 <small>La Murder Le Diable · 2026-07-23 · 64/120</small></span><span class="chip c-good solid">✓ watched</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Logging rules</div>
+      <div class="rowlist">
+        <div class="rowitem"><span class="k">Every entry gets its title <small>copy from the Next episode column</small></span><span class="chip c-good">rule</span></div>
+        <div class="rowitem"><span class="k">Refresh next-episode title <small>TheTVDB / TVmaze after each watch</small></span><span class="chip c-warn">rule</span></div>
+        <div class="rowitem"><span class="k">Unnamed shows <small>SAS Rogue Heroes, Babylon Berlin — "Episode N" is official</small></span><span class="chip c-info">note</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Account</div>
+      <div class="rowlist">
+        <div class="rowitem"><span class="k">scottwillardegan <small>member since 2017-08-04</small></span><span class="chip c-brand">owner</span></div>
+        <div class="rowitem"><span class="k">TV Time / Whip Media <small>service ended Jul 15, 2026</small></span><span class="chip c-hold">defunct</span></div>
+        <div class="rowitem"><span class="k">Archive recovered <small>DioCache.db + plist · Jul 19, 2026</small></span><span class="chip c-good">✓ secured</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec"><span class="pre">▸</span> Full archive</h2>
+  <details class="arch" open>
+    <summary>All TV shows <span class="cnt">277</span></summary>
+    <div class="archlist">
+      <div>1916: The Irish Rebellion</div>
+      <div>1923</div>
+      <div>24</div>
+      <div>24: Legacy</div>
+      <div>A Knight of the Seven Kingdoms</div>
+      <div>A Spy Among Friends</div>
+      <div>Absentia</div>
+      <div>Acapulco (2021)</div>
+      <div>Ahsoka</div>
+      <div>Alexander: The Making of a God</div>
+      <div>Alien: Earth <span class="pg">1/8</span></div>
+      <div>Altered Carbon</div>
+      <div>American Gigolo</div>
+      <div>American Gods</div>
+      <div>American Primeval</div>
+      <div>Andor</div>
+      <div>Animal Kingdom (2016)</div>
+      <div>Archangel</div>
+      <div>Arctic Circle <span class="pg">8/33</span></div>
+      <div>Babylon Berlin <span class="pg">35/40</span></div>
+      <div>Bad Blood (2017)</div>
+      <div>Bad Monkey</div>
+      <div>Band of Brothers</div>
+      <div>Baptiste</div>
+      <div>Barkskins</div>
+      <div>Below Deck</div>
+      <div>Below Deck Down Under</div>
+      <div>Below Deck Mediterranean <span class="pg">174/179</span></div>
+      <div>Below Deck Sailing Yacht</div>
+      <div>Billions</div>
+      <div>Billy the Kid</div>
+      <div>Black Doves</div>
+      <div>Black Sails</div>
+      <div>Black Snow <span class="pg">12/12</span></div>
+      <div>Bloodline</div>
+      <div>Blue Eye Samurai</div>
+      <div>Boardwalk Empire</div>
+      <div>Bodkin</div>
+      <div>Bosch</div>
+      <div>Bosch: Legacy <span class="pg">3/30</span></div>
+      <div>Boston Legal</div>
+      <div>Breaking Bad</div>
+      <div>Britannia</div>
+      <div>Californication</div>
+      <div>Cape Fear <span class="pg">2/6</span></div>
+      <div>Cardinal</div>
+      <div>Carnival Row</div>
+      <div>Catch-22</div>
+      <div>Chapelwaite</div>
+      <div>City on a Hill</div>
+      <div>Copper</div>
+      <div>Counterpart</div>
+      <div>Crime Story</div>
+      <div>Criminal Record <span class="pg">16/16</span></div>
+      <div>Cross</div>
+      <div>CSI: Vegas</div>
+      <div>Curb Your Enthusiasm</div>
+      <div>Dark Matter (2024)</div>
+      <div>Das Boot</div>
+      <div>Deadwood</div>
+      <div>Death in Paradise <span class="pg">64/120</span></div>
+      <div>Designated Survivor</div>
+      <div>Dublin Murders</div>
+      <div>Dune: Prophecy</div>
+      <div>Echo</div>
+      <div>Echo 3</div>
+      <div>Electric Dreams (2017)</div>
+      <div>Fallout <span class="pg">3/16</span></div>
+      <div>Fat Tony &amp; Co.</div>
+      <div>Formula 1: Drive to Survive</div>
+      <div>Fortitude</div>
+      <div>Foyle&#x27;s War</div>
+      <div>Game of Thrones</div>
+      <div>Gangs of London</div>
+      <div>Gaslit</div>
+      <div>Generation Kill</div>
+      <div>Goliath</div>
+      <div>Gomorrah</div>
+      <div>Guyane</div>
+      <div>Hard Sun</div>
+      <div>Hawaii Five-O</div>
+      <div>Hawkeye (2021)</div>
+      <div>Hell on Wheels</div>
+      <div>Hightown</div>
+      <div>Hinterland – Y Gwyll</div>
+      <div>His Dark Materials</div>
+      <div>Homeland</div>
+      <div>Homicide: Life on the Street <span class="pg">21/122</span></div>
+      <div>Hotel Costiera <span class="pg">4/6</span></div>
+      <div>House of Cards (US)</div>
+      <div>House of the Dragon <span class="pg">21/21</span></div>
+      <div>I Am the Night</div>
+      <div>In Plain Sight</div>
+      <div>Inspector De Luca</div>
+      <div>Into the Badlands</div>
+      <div>Jack Irish</div>
+      <div>Jett</div>
+      <div>Justified</div>
+      <div>Justified: City Primeval</div>
+      <div>Knightfall</div>
+      <div>Liaison</div>
+      <div>Lioness</div>
+      <div>Loki</div>
+      <div>Lost</div>
+      <div>Lost U-Boats of WWII</div>
+      <div>Lovecraft Country</div>
+      <div>Luther</div>
+      <div>Magic City</div>
+      <div>Manhunt (2024)</div>
+      <div>Marcella</div>
+      <div>Marco Polo</div>
+      <div>Marvel&#x27;s Inhumans</div>
+      <div>Marvel&#x27;s The Defenders</div>
+      <div>Marvel&#x27;s The Punisher</div>
+      <div>Masters of the Air</div>
+      <div>Mayans M.C.</div>
+      <div>Mayor of Kingstown <span class="pg">23/40</span></div>
+      <div>McMafia</div>
+      <div>Miami Vice</div>
+      <div>Million Dollar Listing Los Angeles</div>
+      <div>MINDHUNTER</div>
+      <div>Mob City</div>
+      <div>MobLand</div>
+      <div>Monarch: Legacy of Monsters</div>
+      <div>Monsieur Spade</div>
+      <div>Moon Knight</div>
+      <div>Moonlighting <span class="pg">17/66</span></div>
+      <div>Mr. Mercedes</div>
+      <div>Mr. Robot</div>
+      <div>Narcos</div>
+      <div>Narcos: Mexico</div>
+      <div>Néro the Assassin <span class="pg">1/8</span></div>
+      <div>Obi-Wan Kenobi</div>
+      <div>On Call</div>
+      <div>Outlander</div>
+      <div>Oz</div>
+      <div>Ozark</div>
+      <div>Paris Police</div>
+      <div>Peaky Blinders</div>
+      <div>Pennyworth: The Origin of Batman&#x27;s Butler</div>
+      <div>Perry Mason (2020)</div>
+      <div>Pirate Treasure of the Knights Templar</div>
+      <div>Power</div>
+      <div>Power Book IV: Force</div>
+      <div>Presumed Innocent</div>
+      <div>Professor T (UK)</div>
+      <div>Quarry</div>
+      <div>Queen of the South</div>
+      <div>Raised by Wolves (2020)</div>
+      <div>Rake</div>
+      <div>Ray Donovan</div>
+      <div>Reacher</div>
+      <div>Rebellion</div>
+      <div>Ripper Street</div>
+      <div>Robbery Homicide Division</div>
+      <div>Romanzo Criminale</div>
+      <div>Rome</div>
+      <div>SAS Rogue Heroes <span class="pg">9/12</span></div>
+      <div>SEAL Team</div>
+      <div>Serengeti</div>
+      <div>Sexy Beast <span class="pg">1/8</span></div>
+      <div>Shetland</div>
+      <div>Shōgun</div>
+      <div>Silver Surfer</div>
+      <div>SIX</div>
+      <div>Slow Horses</div>
+      <div>Smith</div>
+      <div>Sons of Anarchy <span class="pg">48/92</span></div>
+      <div>Spartacus</div>
+      <div>SS-GB</div>
+      <div>Star Trek: Discovery</div>
+      <div>Star Trek: Strange New Worlds <span class="pg">13/30</span></div>
+      <div>Star Wars: Skeleton Crew</div>
+      <div>Star Wars: The Bad Batch</div>
+      <div>Star Wars: The Clone Wars</div>
+      <div>Starsky &amp; Hutch</div>
+      <div>Steal <span class="pg">3/6</span></div>
+      <div>Stick</div>
+      <div>Streets of Laredo</div>
+      <div>Strike</div>
+      <div>Strike Back</div>
+      <div>Striking Out</div>
+      <div>Suburra: Blood on Rome</div>
+      <div>Suburræterna</div>
+      <div>Sugar (2024) <span class="pg">9/11</span></div>
+      <div>Taboo (2017)</div>
+      <div>Tales from the Loop</div>
+      <div>Task</div>
+      <div>Territory (2024)</div>
+      <div>That Dirty Black Bag</div>
+      <div>The Affair</div>
+      <div>The Agency (2024) <span class="pg">20/20</span></div>
+      <div>The Alienist</div>
+      <div>The Bear</div>
+      <div>The Book of Boba Fett</div>
+      <div>The Bridge (2013)</div>
+      <div>The Bureau</div>
+      <div>The Completely Made-Up Adventures of Dick Turpin</div>
+      <div>The Crown</div>
+      <div>The Dark Crystal: Age of Resistance</div>
+      <div>The Eastern Gate</div>
+      <div>The Essex Serpent</div>
+      <div>The Expanse</div>
+      <div>The Falcon and The Winter Soldier</div>
+      <div>The Fall Guy</div>
+      <div>The Game (2014)</div>
+      <div>The Gentlemen</div>
+      <div>The Gone</div>
+      <div>The Good Fight</div>
+      <div>The Good Wife</div>
+      <div>The Great Train Robbery</div>
+      <div>The Ice House</div>
+      <div>The Ipcress File</div>
+      <div>The Irish R. M.</div>
+      <div>The Keepers</div>
+      <div>The Killing (US)</div>
+      <div>The Knick</div>
+      <div>The Last Dance</div>
+      <div>The Last Frontier (2025) <span class="pg">1/10</span></div>
+      <div>The Last Kingdom</div>
+      <div>The Last of Us <span class="pg">2/16</span></div>
+      <div>The Leftovers</div>
+      <div>The Lone Ranger (1949) <span class="pg">15/221</span></div>
+      <div>The Long Road Home</div>
+      <div>The Lord of the Rings: The Rings of Power</div>
+      <div>The Mandalorian</div>
+      <div>The Missing</div>
+      <div>The Night Manager</div>
+      <div>The North Water</div>
+      <div>The Old Man</div>
+      <div>The Pacific</div>
+      <div>The Pembrokeshire Murders</div>
+      <div>The Plot Against America</div>
+      <div>The Prisoner <span class="pg">1/17</span></div>
+      <div>The Rat Patrol</div>
+      <div>The Regime</div>
+      <div>The Rig (2023)</div>
+      <div>The Rockford Files <span class="pg">25/123</span></div>
+      <div>The Rookie <span class="pg">60/144</span></div>
+      <div>The Shield</div>
+      <div>The Son</div>
+      <div>The Sopranos</div>
+      <div>The Suspicions of Mr Whicher</div>
+      <div>The Terminal List</div>
+      <div>The Terminal List: Dark Wolf</div>
+      <div>The Terror</div>
+      <div>The Tourist</div>
+      <div>The Tunnel</div>
+      <div>The Unknown Hitman: The Story of El Cholo Adrián</div>
+      <div>The Valhalla Murders</div>
+      <div>The Wire</div>
+      <div>The Witcher</div>
+      <div>The X-Files <span class="pg">37/220</span></div>
+      <div>Those About to Die</div>
+      <div>Tokyo Vice</div>
+      <div>Tom Clancy&#x27;s Jack Ryan</div>
+      <div>Treadstone</div>
+      <div>Tron: Uprising</div>
+      <div>True Detective</div>
+      <div>Tulsa King</div>
+      <div>Underbelly</div>
+      <div>Underbelly NZ - Land Of The Long Green Cloud</div>
+      <div>Veep</div>
+      <div>Vikings</div>
+      <div>Vikings: Valhalla</div>
+      <div>Wallander (UK)</div>
+      <div>Warrior</div>
+      <div>Watchmen</div>
+      <div>We Own This City</div>
+      <div>Westworld</div>
+      <div>When No One Sees Us <span class="pg">4/8</span></div>
+      <div>White House Plumbers</div>
+      <div>Widow&#x27;s Bay <span class="pg">6/10</span></div>
+      <div>Wisting</div>
+      <div>Women in Blue (2024)</div>
+      <div>Yellowstone (2018)</div>
+      <div>ZeroZeroZero</div>
+    </div>
+  </details>
+  <details class="arch">
+    <summary>All movies <span class="cnt">224</span></summary>
+    <div class="archlist">
+      <div>1917 <span class="yr">2020</span></div>
+      <div>2046 <span class="yr">2004</span></div>
+      <div>A Star Is Born <span class="yr">2018</span></div>
+      <div>A View to a Kill <span class="yr">1985</span></div>
+      <div>Age of Uprising: The Legend of Michael Kohlhaas <span class="yr">2013</span></div>
+      <div>Almost Famous <span class="yr">2000</span></div>
+      <div>Altered Carbon: Resleeved <span class="yr">2020</span></div>
+      <div>Apocalypto <span class="yr">2007</span></div>
+      <div>Armageddon <span class="yr">1998</span></div>
+      <div>Atonement <span class="yr">2008</span></div>
+      <div>Avatar <span class="yr">2009</span></div>
+      <div>Avengers: Endgame <span class="yr">2019</span></div>
+      <div>Avengers: Infinity War <span class="yr">2018</span></div>
+      <div>Baby Driver <span class="yr">2017</span></div>
+      <div>Batman v Superman: Dawn of Justice <span class="yr">2016</span></div>
+      <div>Being James Bond <span class="yr">2021</span></div>
+      <div>Birds of Prey (And the Fantabulous Emancipation of One Harley Quinn) <span class="yr">2020</span></div>
+      <div>Black &#x27;47 <span class="yr">2018</span></div>
+      <div>Black Panther <span class="yr">2018</span></div>
+      <div>Black Panther: Wakanda Forever <span class="yr">2022</span></div>
+      <div>Black Widow <span class="yr">2021</span></div>
+      <div>Blade Runner 2049 <span class="yr">2017</span></div>
+      <div>Blood Ties <span class="yr">2013</span></div>
+      <div>Bloodshot <span class="yr">2020</span></div>
+      <div>Bohemian Rhapsody <span class="yr">2018</span></div>
+      <div>Bonnie and Clyde <span class="yr">1967</span></div>
+      <div>Bridge to Terabithia <span class="yr">2007</span></div>
+      <div>Brother <span class="yr">2000</span></div>
+      <div>Captain America: Civil War <span class="yr">2016</span></div>
+      <div>Captain America: The First Avenger <span class="yr">2011</span></div>
+      <div>Captain Marvel <span class="yr">2019</span></div>
+      <div>Casino <span class="yr">1995</span></div>
+      <div>Casino Royale <span class="yr">1967</span></div>
+      <div>Casino Royale <span class="yr">2006</span></div>
+      <div>Catch Me If You Can <span class="yr">2002</span></div>
+      <div>Changeling <span class="yr">2008</span></div>
+      <div>Charlie&#x27;s Angels <span class="yr">2019</span></div>
+      <div>Cloud <span class="yr">2024</span></div>
+      <div>Confessions of a Dangerous Mind <span class="yr">2002</span></div>
+      <div>Contagion <span class="yr">2011</span></div>
+      <div>Crimson Rivers II: Angels of the Apocalypse <span class="yr">2004</span></div>
+      <div>Crock of Gold: A Few Rounds with Shane MacGowan <span class="yr">2021</span></div>
+      <div>Dark Phoenix <span class="yr">2019</span></div>
+      <div>Dawn of the Planet of the Apes <span class="yr">2014</span></div>
+      <div>Dead Poets Society <span class="yr">1989</span></div>
+      <div>Deadpool <span class="yr">2016</span></div>
+      <div>Den of Thieves <span class="yr">2018</span></div>
+      <div>Diamonds Are Forever <span class="yr">1971</span></div>
+      <div>Die Another Day <span class="yr">2002</span></div>
+      <div>Die Hard <span class="yr">1988</span></div>
+      <div>Django Unchained <span class="yr">2013</span></div>
+      <div>Dr. No <span class="yr">1963</span></div>
+      <div>Dune: Part One <span class="yr">2021</span></div>
+      <div>Edward Scissorhands <span class="yr">1991</span></div>
+      <div>El Camino: A Breaking Bad Movie <span class="yr">2019</span></div>
+      <div>Everything or Nothing <span class="yr">2012</span></div>
+      <div>Extraction <span class="yr">2020</span></div>
+      <div>Fantastic Four: Rise of the Silver Surfer <span class="yr">2007</span></div>
+      <div>Ferris Bueller&#x27;s Day Off <span class="yr">1986</span></div>
+      <div>Filth <span class="yr">2014</span></div>
+      <div>Flight Risk <span class="yr">2025</span></div>
+      <div>For Your Eyes Only <span class="yr">1981</span></div>
+      <div>Force of Nature: The Dry 2 <span class="yr">2024</span></div>
+      <div>Ford v Ferrari <span class="yr">2019</span></div>
+      <div>Forgetting Sarah Marshall <span class="yr">2008</span></div>
+      <div>From Russia with Love <span class="yr">1964</span></div>
+      <div>Full Metal Jacket <span class="yr">1987</span></div>
+      <div>Furiosa: A Mad Max Saga <span class="yr">2024</span></div>
+      <div>GoldenEye <span class="yr">1995</span></div>
+      <div>Goldfinger <span class="yr">1965</span></div>
+      <div>Gone Girl <span class="yr">2014</span></div>
+      <div>Grease <span class="yr">1978</span></div>
+      <div>Greyhound <span class="yr">2020</span></div>
+      <div>Guardians of the Galaxy <span class="yr">2014</span></div>
+      <div>Happy Gilmore <span class="yr">1996</span></div>
+      <div>Hellboy <span class="yr">2004</span></div>
+      <div>Hellboy <span class="yr">2019</span></div>
+      <div>Hellboy II: The Golden Army <span class="yr">2008</span></div>
+      <div>Hellboy The Crooked Man <span class="yr">2025</span></div>
+      <div>Her <span class="yr">2014</span></div>
+      <div>In the Land of Saints and Sinners <span class="yr">2024</span></div>
+      <div>Inception <span class="yr">2010</span></div>
+      <div>Interstellar <span class="yr">2014</span></div>
+      <div>It&#x27;s a Wonderful Life <span class="yr">1947</span></div>
+      <div>John Wick <span class="yr">2014</span></div>
+      <div>John Wick: Chapter 3 - Parabellum <span class="yr">2019</span></div>
+      <div>John Wick: Chapter 4 <span class="yr">2023</span></div>
+      <div>Jojo Rabbit <span class="yr">2019</span></div>
+      <div>Joker <span class="yr">2019</span></div>
+      <div>Jurassic Park <span class="yr">1993</span></div>
+      <div>Jurassic Park III <span class="yr">2001</span></div>
+      <div>Jurassic World <span class="yr">2015</span></div>
+      <div>Jurassic World Dominion <span class="yr">2022</span></div>
+      <div>Jurassic World: Fallen Kingdom <span class="yr">2018</span></div>
+      <div>Jurassic World: Rebirth <span class="yr">2025</span></div>
+      <div>Justice League <span class="yr">2017</span></div>
+      <div>King Arthur: Legend of the Sword <span class="yr">2017</span></div>
+      <div>Knives Out <span class="yr">2019</span></div>
+      <div>Kubi <span class="yr">2023</span></div>
+      <div>Land of Bad <span class="yr">2024</span></div>
+      <div>Layer Cake <span class="yr">2004</span></div>
+      <div>Le Deuxième Souffle <span class="yr">1966</span></div>
+      <div>Legend <span class="yr">2015</span></div>
+      <div>Licence to Kill <span class="yr">1989</span></div>
+      <div>Life <span class="yr">2017</span></div>
+      <div>Live and Let Die <span class="yr">1973</span></div>
+      <div>Logan <span class="yr">2017</span></div>
+      <div>Mary Queen of Scots <span class="yr">2019</span></div>
+      <div>Maze Runner: The Scorch Trials <span class="yr">2015</span></div>
+      <div>Miami Vice <span class="yr">2006</span></div>
+      <div>Moonraker <span class="yr">1979</span></div>
+      <div>Murder on the Orient Express <span class="yr">2017</span></div>
+      <div>Never Say Never Again <span class="yr">1983</span></div>
+      <div>No Time to Die <span class="yr">2021</span></div>
+      <div>Octopussy <span class="yr">1983</span></div>
+      <div>On Her Majesty&#x27;s Secret Service <span class="yr">1969</span></div>
+      <div>Once Upon a Time... in Hollywood <span class="yr">2019</span></div>
+      <div>One Battle After Another <span class="yr">2025</span></div>
+      <div>Outrage <span class="yr">2010</span></div>
+      <div>Outrage Beyond <span class="yr">2012</span></div>
+      <div>Outrage Coda <span class="yr">2017</span></div>
+      <div>Palm Springs <span class="yr">2021</span></div>
+      <div>Papillon <span class="yr">2017</span></div>
+      <div>Parasite <span class="yr">2019</span></div>
+      <div>Path of the Panther <span class="yr">2022</span></div>
+      <div>Poolman <span class="yr">2024</span></div>
+      <div>Pride &amp; Prejudice <span class="yr">2005</span></div>
+      <div>Prisoners <span class="yr">2013</span></div>
+      <div>Quantum of Solace <span class="yr">2008</span></div>
+      <div>Raiders of the Lost Ark <span class="yr">1981</span></div>
+      <div>Ray Donovan: The Movie <span class="yr">2022</span></div>
+      <div>Rebel Moon Part 1: A Child of Fire <span class="yr">2024</span></div>
+      <div>Red Knot <span class="yr">2014</span></div>
+      <div>Ride Along <span class="yr">2014</span></div>
+      <div>Rise of the Planet of the Apes <span class="yr">2011</span></div>
+      <div>Rocketman <span class="yr">2019</span></div>
+      <div>Se7en <span class="yr">1995</span></div>
+      <div>Silver Surfer: Prodigal Son <span class="yr">2019</span></div>
+      <div>Sisu <span class="yr">2023</span></div>
+      <div>Skyfall <span class="yr">2012</span></div>
+      <div>Snatch <span class="yr">2000</span></div>
+      <div>Solo: A Star Wars Story <span class="yr">2018</span></div>
+      <div>Soul <span class="yr">2020</span></div>
+      <div>Spectre <span class="yr">2015</span></div>
+      <div>Spenser Confidential <span class="yr">2020</span></div>
+      <div>Spider in the Web <span class="yr">2020</span></div>
+      <div>Split <span class="yr">2017</span></div>
+      <div>Star Wars <span class="yr">2022</span></div>
+      <div>Star Wars: The Rise of Skywalker <span class="yr">2019</span></div>
+      <div>State of Grace <span class="yr">1990</span></div>
+      <div>Suburra <span class="yr">2015</span></div>
+      <div>Suicide Squad <span class="yr">2016</span></div>
+      <div>Tenet <span class="yr">2020</span></div>
+      <div>The Accountant <span class="yr">2016</span></div>
+      <div>The Adventures of Sherlock Holmes <span class="yr">1939</span></div>
+      <div>The Amazing Spider-Man 2 <span class="yr">2014</span></div>
+      <div>The Avengers <span class="yr">2012</span></div>
+      <div>The Batman <span class="yr">2022</span></div>
+      <div>The Comeback Trail <span class="yr">2020</span></div>
+      <div>The Convert <span class="yr">2024</span></div>
+      <div>The Courier <span class="yr">2021</span></div>
+      <div>The Crimson Rivers <span class="yr">2000</span></div>
+      <div>The Dark Knight <span class="yr">2008</span></div>
+      <div>The Dark Tower <span class="yr">2017</span></div>
+      <div>The Dead Don&#x27;t Hurt <span class="yr">2024</span></div>
+      <div>The Departed <span class="yr">2006</span></div>
+      <div>The Descendants <span class="yr">2011</span></div>
+      <div>The Dry <span class="yr">2021</span></div>
+      <div>The Emperor of Paris <span class="yr">2018</span></div>
+      <div>The Exception <span class="yr">2017</span></div>
+      <div>The Gangster, The Cop, The Devil <span class="yr">2019</span></div>
+      <div>The Gentlemen <span class="yr">2020</span></div>
+      <div>The Godfather <span class="yr">1972</span></div>
+      <div>The Grandmaster <span class="yr">2013</span></div>
+      <div>The Great Gatsby <span class="yr">2013</span></div>
+      <div>The Great War of Archimedes <span class="yr">2019</span></div>
+      <div>The Hobbit: The Desolation of Smaug <span class="yr">2013</span></div>
+      <div>The Hound of the Baskervilles <span class="yr">1939</span></div>
+      <div>The Hunger Games <span class="yr">2012</span></div>
+      <div>The Hunt <span class="yr">2020</span></div>
+      <div>The Incredible Hulk <span class="yr">2008</span></div>
+      <div>The Last Samurai <span class="yr">2004</span></div>
+      <div>The Lion King <span class="yr">2019</span></div>
+      <div>The Living Daylights <span class="yr">1987</span></div>
+      <div>The Lost World: Jurassic Park <span class="yr">1997</span></div>
+      <div>The Man with the Golden Gun <span class="yr">1974</span></div>
+      <div>The Mandela Effect <span class="yr">2019</span></div>
+      <div>The Matrix <span class="yr">1999</span></div>
+      <div>The Maze Runner <span class="yr">2014</span></div>
+      <div>The New Mutants <span class="yr">2020</span></div>
+      <div>The Northman <span class="yr">2022</span></div>
+      <div>The Old Guard <span class="yr">2020</span></div>
+      <div>The Order <span class="yr">2025</span></div>
+      <div>The Outlaws <span class="yr">2017</span></div>
+      <div>The Pale Blue Eye <span class="yr">2023</span></div>
+      <div>The Phoenician Scheme <span class="yr">2025</span></div>
+      <div>The Poseidon Adventure <span class="yr">1972</span></div>
+      <div>The Road to Wellville <span class="yr">1994</span></div>
+      <div>The Road Warrior <span class="yr">1982</span></div>
+      <div>The Shawshank Redemption <span class="yr">1994</span></div>
+      <div>The Shining <span class="yr">1980</span></div>
+      <div>The Silence of the Lambs <span class="yr">1991</span></div>
+      <div>The Sixth Sense <span class="yr">2000</span></div>
+      <div>The Spiderwick Chronicles <span class="yr">2008</span></div>
+      <div>The Spy Who Loved Me <span class="yr">1977</span></div>
+      <div>The Tomorrow War <span class="yr">2021</span></div>
+      <div>The Town <span class="yr">2010</span></div>
+      <div>The Twilight Samurai <span class="yr">2002</span></div>
+      <div>The Wolf of Wall Street <span class="yr">2014</span></div>
+      <div>The World Is Not Enough <span class="yr">1999</span></div>
+      <div>Thor: Ragnarok <span class="yr">2017</span></div>
+      <div>Thunderball <span class="yr">1965</span></div>
+      <div>Titanic <span class="yr">1998</span></div>
+      <div>Tomorrow Never Dies <span class="yr">1997</span></div>
+      <div>Top Gun: Maverick <span class="yr">2022</span></div>
+      <div>Tron <span class="yr">1982</span></div>
+      <div>TRON: Legacy <span class="yr">2010</span></div>
+      <div>Twilight of the Warriors: Walled In <span class="yr">2024</span></div>
+      <div>V for Vendetta <span class="yr">2006</span></div>
+      <div>Vanilla Sky <span class="yr">2002</span></div>
+      <div>Venom <span class="yr">2018</span></div>
+      <div>Whiplash <span class="yr">2014</span></div>
+      <div>Wonder Woman 1984 <span class="yr">2020</span></div>
+      <div>You Only Live Twice <span class="yr">1967</span></div>
+    </div>
+  </details>
+  <details class="arch">
+    <summary>Watchlist <span class="cnt">49</span></summary>
+    <div class="archlist">
+      <div>2046</div>
+      <div>Altered Carbon: Resleeved</div>
+      <div>Armageddon</div>
+      <div>Being James Bond</div>
+      <div>Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)</div>
+      <div>Black Widow</div>
+      <div>Blood Ties</div>
+      <div>Bloodshot</div>
+      <div>Brother</div>
+      <div>Charlie&#x27;s Angels</div>
+      <div>Confessions of a Dangerous Mind</div>
+      <div>Dark Phoenix</div>
+      <div>El Camino: A Breaking Bad Movie</div>
+      <div>Everything or Nothing</div>
+      <div>Her</div>
+      <div>Jurassic Park</div>
+      <div>Jurassic Park III</div>
+      <div>Jurassic World: Fallen Kingdom</div>
+      <div>Kubi</div>
+      <div>Le Deuxième Souffle</div>
+      <div>Life</div>
+      <div>Logan</div>
+      <div>Maze Runner: The Scorch Trials</div>
+      <div>Murder on the Orient Express</div>
+      <div>Outrage Coda</div>
+      <div>Parasite</div>
+      <div>Poolman</div>
+      <div>Prisoners</div>
+      <div>Red Knot</div>
+      <div>Silver Surfer: Prodigal Son</div>
+      <div>Spenser Confidential</div>
+      <div>Split</div>
+      <div>Suburra</div>
+      <div>The Comeback Trail</div>
+      <div>The Courier</div>
+      <div>The Crimson Rivers</div>
+      <div>The Dark Tower</div>
+      <div>The Dead Don&#x27;t Hurt</div>
+      <div>The Gentlemen</div>
+      <div>The Grandmaster</div>
+      <div>The Hunt</div>
+      <div>The Last Samurai</div>
+      <div>The Lion King</div>
+      <div>The Lost World: Jurassic Park</div>
+      <div>The New Mutants</div>
+      <div>The Outlaws</div>
+      <div>The Twilight Samurai</div>
+      <div>Top Gun: Maverick</div>
+      <div>Twilight of the Warriors: Walled In</div>
+    </div>
+  </details>
+
+  <div class="foot">
+    <span>Source: TV Time app cache (DioCache.db + preferences plist) via device backup, Jul 19, 2026 · per-episode history was not stored on-device.</span>
+    <span>intel · cases · archive</span>
+  </div>
+</div>
+
+<script>
+/* Live Pacific-time clock — updates every second, auto-handles PST/PDT.
+   To change timezone, edit TZ below (IANA name, e.g. 'America/New_York'). */
+(function(){
+  var timeEl = document.getElementById('ptclock-time');
+  var secEl  = document.getElementById('ptclock-sec');
+  var zoneEl = document.getElementById('ptclock-zone');
+  var dateEl = document.getElementById('ptclock-date');
+  if(!timeEl) return;
+  var TZ = 'America/Los_Angeles';
+  var hmFmt   = new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',hour:'2-digit',minute:'2-digit'});
+  var secFmt  = new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',second:'2-digit'});
+  var zoneFmt = new Intl.DateTimeFormat('en-US',{timeZone:TZ,timeZoneName:'short'});
+  var dateFmt = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
+  function partVal(fmt,type){
+    var p = fmt.formatToParts(new Date());
+    for(var i=0;i<p.length;i++){ if(p[i].type===type) return p[i].value; }
+    return '';
+  }
+  function dateStr(){
+    var p = dateFmt.formatToParts(new Date()), w='', m='', d='';
+    for(var i=0;i<p.length;i++){ var t=p[i];
+      if(t.type==='weekday') w=t.value; else if(t.type==='month') m=t.value; else if(t.type==='day') d=t.value; }
+    return w+' '+m+' '+d;
+  }
+  function tick(){
+    timeEl.textContent = hmFmt.format(new Date());
+    if(secEl)  secEl.textContent  = ':'+partVal(secFmt,'second');
+    if(zoneEl) zoneEl.textContent = partVal(zoneFmt,'timeZoneName') || 'PT';
+    if(dateEl) dateEl.textContent = dateStr();
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* Relative "last updated" label — reads the baked-in build timestamp. */
+  var relEl = document.getElementById('updated-rel');
+  var banner = document.getElementById('updated-banner');
+  function relTick(){
+    if(!relEl || !banner) return;
+    var iso = banner.getAttribute('data-updated');
+    var then = Date.parse(iso);
+    if(isNaN(then)){ relEl.textContent=''; return; }
+    var s = Math.max(0, Math.round((Date.now()-then)/1000));
+    var txt;
+    if(s < 45) txt='just now';
+    else if(s < 5400) txt=Math.round(s/60)+' min ago';
+    else if(s < 86400) txt=Math.round(s/3600)+' hr ago';
+    else txt=Math.round(s/86400)+' d ago';
+    relEl.textContent='('+txt+')';
+  }
+  relTick();
+  setInterval(relTick, 30000);
+})();
+</script>
