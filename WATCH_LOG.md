@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 437 | 277 | 224 | 49 |
+| 437 | 278 | 224 | 49 |
 
 ## 🆕 Running Log
 
@@ -19,11 +19,12 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (29 shows)
+## ▶ Resume Here — where you left off (30 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
+| Blue Lights | S3E1 | 12/18 | The Party | Currently watching |
 | Cape Fear | S1E5 | 4/6 | Faith | Currently watching |
 | Death in Paradise | S9E3 | 65/120 | Tour De Murder | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -62,7 +63,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 > Completion was cached for only 32 of the 277 shows, so these 4 are the ones confirmed finished. Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
-## 📺 All TV Shows (277)
+## 📺 All TV Shows (278)
 
 - 1916: The Irish Rebellion
 - 1923
@@ -100,6 +101,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Black Snow · 12/12
 - Bloodline
 - Blue Eye Samurai
+- Blue Lights · 12/18
 - Boardwalk Empire
 - Bodkin
 - Bosch
