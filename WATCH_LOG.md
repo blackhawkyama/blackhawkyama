@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 437 | 278 | 224 | 49 |
+| 438 | 278 | 224 | 49 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-24 | Blue Lights | S3E1 | The Party | First episode of the show ever watched (started at series 3, skipping S1–2) — 1/18, pick up at S3E2 "Skipper" |
 | 2026-07-23 | Death in Paradise | S9E2 | A Murder in Portrait | Progress 64/120 → 65/120, pick up at S9E3 "Tour De Murder" |
 | 2026-07-23 | Cape Fear | S1E4 | Pierced | Progress 3/6 → 4/6, pick up at S1E5 "Faith" |
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
@@ -24,7 +25,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
-| Blue Lights | S3E1 | 12/18 | The Party | Currently watching |
+| Blue Lights | S3E2 | 1/18 | Skipper | Currently watching |
 | Cape Fear | S1E5 | 4/6 | Faith | Currently watching |
 | Death in Paradise | S9E3 | 65/120 | Tour De Murder | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -101,7 +102,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Black Snow · 12/12
 - Bloodline
 - Blue Eye Samurai
-- Blue Lights · 12/18
+- Blue Lights · 1/18
 - Boardwalk Empire
 - Bodkin
 - Bosch
