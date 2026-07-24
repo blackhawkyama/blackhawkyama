@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 435 | 277 | 224 | 49 |
+| 436 | 277 | 224 | 49 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-23 | Cape Fear | S1E4 | Pierced | Progress 3/6 → 4/6, pick up at S1E5 "Faith" |
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
@@ -22,7 +23,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
-| Cape Fear | S1E4 | 3/6 | Pierced | Currently watching |
+| Cape Fear | S1E5 | 4/6 | Faith | Currently watching |
 | Death in Paradise | S9E2 | 64/120 | A Murder in Portrait | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E2 | 9/11 | Downer Town | Currently watching |
@@ -106,7 +107,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Breaking Bad
 - Britannia
 - Californication
-- Cape Fear · 3/6
+- Cape Fear · 4/6
 - Cardinal
 - Carnival Row
 - Catch-22
