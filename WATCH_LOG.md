@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 439 | 278 | 224 | 49 |
+| 439 | 278 | 225 | 49 |
 
 ## 🆕 Running Log
 
@@ -346,7 +346,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (224)
+## 🎬 All Movies (225)
 
 - 1917 (2020)
 - 2046 (2004)
@@ -524,6 +524,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Grandmaster (2013)
 - The Great Gatsby (2013)
 - The Great War of Archimedes (2019)
+- The Hidden Fortress (1958)
 - The Hobbit: The Desolation of Smaug (2013)
 - The Hound of the Baskervilles (1939)
 - The Hunger Games (2012)
