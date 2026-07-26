@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 439 | 278 | 227 | 49 |
+| 439 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -577,7 +577,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Wonder Woman 1984 (2020)
 - You Only Live Twice (1967)
 
-## 🔖 Watchlist (49)
+## 🔖 Watchlist (50)
 
 - 2046
 - Altered Carbon: Resleeved
@@ -593,6 +593,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Dark Phoenix
 - El Camino: A Breaking Bad Movie
 - Everything or Nothing
+- Fox Tales · documentary, on Kanopy
 - Her
 - Jurassic Park
 - Jurassic Park III
