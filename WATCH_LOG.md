@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 439 | 278 | 225 | 49 |
+| 439 | 278 | 227 | 49 |
 
 ## 🆕 Running Log
 
@@ -347,10 +347,11 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (225)
+## 🎬 All Movies (227)
 
 - 1917 (2020)
 - 2046 (2004)
+- A Beautiful Mind (2001) · ✓ watched pre-tracking
 - A Star Is Born (2018)
 - A View to a Kill (1985)
 - Age of Uprising: The Legend of Michael Kohlhaas (2013)
@@ -457,6 +458,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Live and Let Die (1973)
 - Logan (2017)
 - Mary Queen of Scots (2019)
+- Master and Commander: The Far Side of the World (2003) · ✓ watched pre-tracking
 - Maze Runner: The Scorch Trials (2015)
 - Miami Vice (2006)
 - Moonraker (1979)
