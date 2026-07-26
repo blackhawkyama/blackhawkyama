@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-25 | The Hidden Fortress (1958) | Movie | The Hidden Fortress | First movie logged since the shutdown — Kurosawa |
 | 2026-07-25 | Cape Fear | S1E5 | Faith | Progress now 5/10 — series total corrected from 6 to 10 episodes (stale TV Time cache); pick up at S1E6 "Possum" |
 | 2026-07-24 | Blue Lights | S3E1 | The Party | First episode of the show ever watched (started at series 3, skipping S1–2) — 1/18, pick up at S3E2 "Skipper" |
 | 2026-07-23 | Death in Paradise | S9E2 | A Murder in Portrait | Progress 64/120 → 65/120, pick up at S9E3 "Tour De Murder" |
@@ -524,7 +525,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Grandmaster (2013)
 - The Great Gatsby (2013)
 - The Great War of Archimedes (2019)
-- The Hidden Fortress (1958)
+- The Hidden Fortress (1958) · ✓ watched 2026-07-25
 - The Hobbit: The Desolation of Smaug (2013)
 - The Hound of the Baskervilles (1939)
 - The Hunger Games (2012)
