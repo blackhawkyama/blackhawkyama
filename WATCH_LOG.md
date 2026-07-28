@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 441 | 278 | 227 | 50 |
+| 443 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,8 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-27 | House of the Dragon | S3E5 | Unbowed and Unbent | Logged retroactively — watched after the shutdown; progress now 23/26 |
+| 2026-07-27 | House of the Dragon | S3E4 | Tumbleton | Logged retroactively — watched after the shutdown; back from Confirmed Completed as S3 airs |
 | 2026-07-26 | Blue Lights | S3E3 | The Bird | Progress 2/18 → 3/18, pick up at S3E4 "The Parting Glass" |
 | 2026-07-25 | Blue Lights | S3E2 | Skipper | Progress 1/18 → 2/18, pick up at S3E3 "The Bird" |
 | 2026-07-25 | The Hidden Fortress (1958) | Movie | The Hidden Fortress | First movie logged since the shutdown — Kurosawa |
@@ -24,7 +26,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (30 shows)
+## ▶ Resume Here — where you left off (31 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
@@ -32,6 +34,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Blue Lights | S3E4 | 3/18 | The Parting Glass | Currently watching |
 | Cape Fear | S1E6 | 5/10 | Possum | Currently watching |
 | Death in Paradise | S9E3 | 65/120 | Tour De Murder | Currently watching |
+| House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E2 | 9/11 | Downer Town | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
@@ -59,14 +62,13 @@ Newest first. Add a row every time you watch something — **the Title column al
 | The Rookie | S4E8 | 60/144 | Hit and Run | Paused a while |
 | The X-Files | S2E14 | 37/220 | Die Hand Die Verletzt | Paused a while |
 
-## ✓ Confirmed Completed (4)
+## ✓ Confirmed Completed (3)
 
 - Black Snow
 - Criminal Record
-- House of the Dragon
 - The Agency (2024)
 
-> Completion was cached for only 32 of the 277 shows, so these 4 are the ones confirmed finished. Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
+> Completion was cached for only 32 of the 277 shows, so these 3 are the ones confirmed finished. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
 ## 📺 All TV Shows (278)
 
@@ -161,7 +163,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Homicide: Life on the Street · 21/122
 - Hotel Costiera · 4/6
 - House of Cards (US)
-- House of the Dragon · 21/21
+- House of the Dragon · 23/26
 - I Am the Night
 - In Plain Sight
 - Inspector De Luca
