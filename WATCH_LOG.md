@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 443 | 278 | 227 | 50 |
+| 444 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-30 | Cape Fear | S1E6 | Possum | Progress 5/10 → 6/10, pick up at S1E7 "Mongrel" |
 | 2026-07-27 | House of the Dragon | S3E5 | Unbowed and Unbent | Logged retroactively — watched after the shutdown; progress now 23/26 |
 | 2026-07-27 | House of the Dragon | S3E4 | Tumbleton | Logged retroactively — watched after the shutdown; back from Confirmed Completed as S3 airs |
 | 2026-07-26 | Blue Lights | S3E3 | The Bird | Progress 2/18 → 3/18, pick up at S3E4 "The Parting Glass" |
@@ -32,7 +33,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E4 | 3/18 | The Parting Glass | Currently watching |
-| Cape Fear | S1E6 | 5/10 | Possum | Currently watching |
+| Cape Fear | S1E7 | 6/10 | Mongrel | Currently watching |
 | Death in Paradise | S9E3 | 65/120 | Tour De Murder | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -117,7 +118,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Breaking Bad
 - Britannia
 - Californication
-- Cape Fear · 5/10
+- Cape Fear · 6/10
 - Cardinal
 - Carnival Row
 - Catch-22
