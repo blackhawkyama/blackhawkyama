@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 446 | 278 | 227 | 50 |
+| 447 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-30 | Death in Paradise | S9E3 | Tour De Murder | Progress 65/120 → 66/120, pick up at S9E4 "Pirates of the Murder Scene" |
 | 2026-07-30 | Cape Fear | S1E8 | Los tiempos de Dios son Perfectos | Progress 7/10 → 8/10, pick up at S1E9 "The Scar" |
 | 2026-07-30 | Cape Fear | S1E7 | Mongrel | Progress 6/10 → 7/10, pick up at S1E8 "Los tiempos de Dios son Perfectos" |
 | 2026-07-30 | Cape Fear | S1E6 | Possum | Progress 5/10 → 6/10, pick up at S1E7 "Mongrel" |
@@ -36,7 +37,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E4 | 3/18 | The Parting Glass | Currently watching |
 | Cape Fear | S1E9 | 8/10 | The Scar | Currently watching |
-| Death in Paradise | S9E3 | 65/120 | Tour De Murder | Currently watching |
+| Death in Paradise | S9E4 | 66/120 | Pirates of the Murder Scene | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E2 | 9/11 | Downer Town | Currently watching |
@@ -136,7 +137,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Dark Matter (2024)
 - Das Boot
 - Deadwood
-- Death in Paradise · 65/120
+- Death in Paradise · 66/120
 - Designated Survivor
 - Dublin Murders
 - Dune: Prophecy
