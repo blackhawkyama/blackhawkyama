@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 449 | 278 | 227 | 50 |
+| 450 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-31 | Sugar (2024) | S2E2 | Downer Town | Progress 9/11 → 10/11, pick up at S2E3 "Watch Face" — episode #450 all-time |
 | 2026-07-30 | Cape Fear | S1E10 | The Executioners | 🏁 SERIES COMPLETE — 10/10, first show finished since the TV Time shutdown |
 | 2026-07-30 | Cape Fear | S1E9 | The Scar | Progress 8/10 → 9/10 — finale "The Executioners" is the only one left |
 | 2026-07-30 | Death in Paradise | S9E3 | Tour De Murder | Progress 65/120 → 66/120, pick up at S9E4 "Pirates of the Murder Scene" |
@@ -41,7 +42,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Death in Paradise | S9E4 | 66/120 | Pirates of the Murder Scene | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
-| Sugar (2024) | S2E2 | 9/11 | Downer Town | Currently watching |
+| Sugar (2024) | S2E3 | 10/11 | Watch Face | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
@@ -263,7 +264,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Striking Out
 - Suburra: Blood on Rome
 - Suburræterna
-- Sugar (2024) · 9/11
+- Sugar (2024) · 10/11
 - Taboo (2017)
 - Tales from the Loop
 - Task
