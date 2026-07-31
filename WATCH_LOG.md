@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 448 | 278 | 227 | 50 |
+| 449 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-07-30 | Cape Fear | S1E10 | The Executioners | 🏁 SERIES COMPLETE — 10/10, first show finished since the TV Time shutdown |
 | 2026-07-30 | Cape Fear | S1E9 | The Scar | Progress 8/10 → 9/10 — finale "The Executioners" is the only one left |
 | 2026-07-30 | Death in Paradise | S9E3 | Tour De Murder | Progress 65/120 → 66/120, pick up at S9E4 "Pirates of the Murder Scene" |
 | 2026-07-30 | Cape Fear | S1E8 | Los tiempos de Dios son Perfectos | Progress 7/10 → 8/10, pick up at S1E9 "The Scar" |
@@ -31,13 +32,12 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (31 shows)
+## ▶ Resume Here — where you left off (30 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E4 | 3/18 | The Parting Glass | Currently watching |
-| Cape Fear | S1E10 | 9/10 | The Executioners | Currently watching |
 | Death in Paradise | S9E4 | 66/120 | Pirates of the Murder Scene | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -67,13 +67,14 @@ Newest first. Add a row every time you watch something — **the Title column al
 | The Rookie | S4E8 | 60/144 | Hit and Run | Paused a while |
 | The X-Files | S2E14 | 37/220 | Die Hand Die Verletzt | Paused a while |
 
-## ✓ Confirmed Completed (3)
+## ✓ Confirmed Completed (4)
 
 - Black Snow
+- Cape Fear · 10/10 · ✓ completed 2026-07-30 — first finish since the shutdown
 - Criminal Record
 - The Agency (2024)
 
-> Completion was cached for only 32 of the 277 shows, so these 3 are the ones confirmed finished. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
+> Black Snow, Criminal Record, and The Agency come from the recovered TV Time cache (completion was cached for only 32 of the 277 shows). Cape Fear was completed on this log. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
 ## 📺 All TV Shows (278)
 
@@ -122,7 +123,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Breaking Bad
 - Britannia
 - Californication
-- Cape Fear · 9/10
+- Cape Fear · 10/10 · ✓ complete
 - Cardinal
 - Carnival Row
 - Catch-22
