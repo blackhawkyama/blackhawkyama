@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 451 | 278 | 227 | 50 |
+| 452 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-01 | Blue Lights | S3E4 | The Parting Glass | Progress 3/18 → 4/18, pick up at S3E5 "Ordo ab Chao" |
 | 2026-07-31 | Sugar (2024) | S2E3 | Watch Face | Progress now 11/16 — season 2 is 8 episodes, total corrected from 11 (stale TV Time cache); pick up at S2E4 "Off 15" |
 | 2026-07-31 | Sugar (2024) | S2E2 | Downer Town | Progress 9/11 → 10/11, pick up at S2E3 "Watch Face" — episode #450 all-time |
 | 2026-07-30 | Cape Fear | S1E10 | The Executioners | 🏁 SERIES COMPLETE — 10/10, first show finished since the TV Time shutdown |
@@ -39,7 +40,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
-| Blue Lights | S3E4 | 3/18 | The Parting Glass | Currently watching |
+| Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
 | Death in Paradise | S9E4 | 66/120 | Pirates of the Murder Scene | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -116,7 +117,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Black Snow · 12/12
 - Bloodline
 - Blue Eye Samurai
-- Blue Lights · 3/18
+- Blue Lights · 4/18
 - Boardwalk Empire
 - Bodkin
 - Bosch
