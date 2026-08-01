@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 452 | 278 | 227 | 50 |
+| 453 | 278 | 227 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-01 | Death in Paradise | S9E4 | Pirates of the Murder Scene | Progress 66/120 → 67/120, pick up at S9E5 "Switcharoo" — Neville Parker's first episode |
 | 2026-08-01 | Blue Lights | S3E4 | The Parting Glass | Progress 3/18 → 4/18, pick up at S3E5 "Ordo ab Chao" |
 | 2026-07-31 | Sugar (2024) | S2E3 | Watch Face | Progress now 11/16 — season 2 is 8 episodes, total corrected from 11 (stale TV Time cache); pick up at S2E4 "Off 15" |
 | 2026-07-31 | Sugar (2024) | S2E2 | Downer Town | Progress 9/11 → 10/11, pick up at S2E3 "Watch Face" — episode #450 all-time |
@@ -41,7 +42,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
-| Death in Paradise | S9E4 | 66/120 | Pirates of the Murder Scene | Currently watching |
+| Death in Paradise | S9E5 | 67/120 | Switcharoo | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E4 | 11/16 | Off 15 | Currently watching |
@@ -142,7 +143,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Dark Matter (2024)
 - Das Boot
 - Deadwood
-- Death in Paradise · 66/120
+- Death in Paradise · 67/120
 - Designated Survivor
 - Dublin Murders
 - Dune: Prophecy
