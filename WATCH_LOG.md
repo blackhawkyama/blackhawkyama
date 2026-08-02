@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 453 | 278 | 227 | 50 |
+| 453 | 278 | 228 | 50 |
 
 ## 🆕 Running Log
 
@@ -361,7 +361,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (227)
+## 🎬 All Movies (228)
 
 - 1917 (2020)
 - 2046 (2004)
@@ -527,6 +527,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Convert (2024)
 - The Courier (2021)
 - The Crimson Rivers (2000)
+- The Crossing Guard (1995) · ✓ watched pre-tracking
 - The Dark Knight (2008)
 - The Dark Tower (2017)
 - The Dead Don't Hurt (2024)
