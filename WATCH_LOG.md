@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 454 | 278 | 228 | 50 |
+| 457 | 278 | 228 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,9 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-04 | Sugar (2024) | S2E7 | What Else Can You Do? | Progress 14/16 → 15/16 — only the Aug 7 finale left |
+| 2026-08-04 | Sugar (2024) | S2E6 | Cautionary Tale | Progress 13/16 → 14/16 |
+| 2026-08-04 | Sugar (2024) | S2E5 | Unknowns | Progress 12/16 → 13/16 |
 | 2026-08-01 | Sugar (2024) | S2E4 | Off 15 | Progress 11/16 → 12/16, pick up at S2E5 "Unknowns" |
 | 2026-08-01 | Death in Paradise | S9E4 | Pirates of the Murder Scene | Progress 66/120 → 67/120, pick up at S9E5 "Switcharoo" — Neville Parker's first episode |
 | 2026-08-01 | Blue Lights | S3E4 | The Parting Glass | Progress 3/18 → 4/18, pick up at S3E5 "Ordo ab Chao" |
@@ -46,7 +49,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Death in Paradise | S9E5 | 67/120 | Switcharoo | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
-| Sugar (2024) | S2E5 | 12/16 | Unknowns | Currently watching |
+| Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
@@ -268,7 +271,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Striking Out
 - Suburra: Blood on Rome
 - Suburræterna
-- Sugar (2024) · 12/16
+- Sugar (2024) · 15/16
 - Taboo (2017)
 - Tales from the Loop
 - Task
