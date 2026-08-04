@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 457 | 278 | 228 | 50 |
+| 458 | 278 | 228 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-04 | Death in Paradise | S9E5 | Switcharoo | Progress 67/120 → 68/120, pick up at S9E6 "Murder on Mosquito Island" |
 | 2026-08-04 | Sugar (2024) | S2E7 | What Else Can You Do? | Progress 14/16 → 15/16 — only the Aug 7 finale left |
 | 2026-08-04 | Sugar (2024) | S2E6 | Cautionary Tale | Progress 13/16 → 14/16 |
 | 2026-08-04 | Sugar (2024) | S2E5 | Unknowns | Progress 12/16 → 13/16 |
@@ -46,7 +47,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
-| Death in Paradise | S9E5 | 67/120 | Switcharoo | Currently watching |
+| Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
@@ -147,7 +148,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Dark Matter (2024)
 - Das Boot
 - Deadwood
-- Death in Paradise · 67/120
+- Death in Paradise · 68/120
 - Designated Survivor
 - Dublin Murders
 - Dune: Prophecy
