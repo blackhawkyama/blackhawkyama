@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 458 | 278 | 229 | 50 |
+| 458 | 278 | 230 | 50 |
 
 ## 🆕 Running Log
 
@@ -367,11 +367,12 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (229)
+## 🎬 All Movies (230)
 
 - 1917 (2020)
 - 2046 (2004)
 - A Beautiful Mind (2001) · ✓ watched pre-tracking
+- A Haunting in Venice (2023) · ✓ watched pre-tracking
 - A Star Is Born (2018)
 - A View to a Kill (1985)
 - Age of Uprising: The Legend of Michael Kohlhaas (2013)
