@@ -42,7 +42,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (30 shows)
+## ▶ Resume Here — where you left off (31 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
@@ -54,6 +54,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
+| Those About to Die | S1E1 | 0/10 | Rise or Die | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
 | Widow's Bay | S1E7 | 6/10 | Seasickness | Currently watching |
 | Alien: Earth | S1E2 | 1/8 | Mr. October | Paused a while |
@@ -342,7 +343,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Wire
 - The Witcher
 - The X-Files · 37/220
-- Those About to Die
+- Those About to Die · 0/10 · restarted fresh 2026-08-07 (earlier progress unknown)
 - Tokyo Vice
 - Tom Clancy's Jack Ryan
 - Treadstone
