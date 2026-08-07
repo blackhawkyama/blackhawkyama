@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 458 | 278 | 228 | 50 |
+| 458 | 278 | 229 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-07 | Death on the Nile (2022) | Movie | Death on the Nile | Branagh's Poirot — joins Murder on the Orient Express (2017) in the archive |
 | 2026-08-04 | Death in Paradise | S9E5 | Switcharoo | Progress 67/120 → 68/120, pick up at S9E6 "Murder on Mosquito Island" |
 | 2026-08-04 | Sugar (2024) | S2E7 | What Else Can You Do? | Progress 14/16 → 15/16 — only the Aug 7 finale left |
 | 2026-08-04 | Sugar (2024) | S2E6 | Cautionary Tale | Progress 13/16 → 14/16 |
@@ -366,7 +367,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (228)
+## 🎬 All Movies (229)
 
 - 1917 (2020)
 - 2046 (2004)
@@ -415,6 +416,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Dawn of the Planet of the Apes (2014)
 - Dead Poets Society (1989)
 - Deadpool (2016)
+- Death on the Nile (2022) · ✓ watched 2026-08-07
 - Den of Thieves (2018)
 - Diamonds Are Forever (1971)
 - Die Another Day (2002)
