@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 459 | 278 | 230 | 50 |
+| 460 | 278 | 230 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-07 | Sugar (2024) | S2E8 | Like Sugar | 🏁 SEASON COMPLETE — 16/16, watched on finale night; season 3 unannounced |
 | 2026-08-07 | Those About to Die | S1E1 | Rise or Die | Fresh-start restart — 1/10, pick up at S1E2 "Trust None" |
 | 2026-08-07 | Death on the Nile (2022) | Movie | Death on the Nile | Branagh's Poirot — joins Murder on the Orient Express (2017) in the archive |
 | 2026-08-04 | Death in Paradise | S9E5 | Switcharoo | Progress 67/120 → 68/120, pick up at S9E6 "Murder on Mosquito Island" |
@@ -43,7 +44,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (32 shows)
+## ▶ Resume Here — where you left off (31 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
@@ -53,7 +54,6 @@ Newest first. Add a row every time you watch something — **the Title column al
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E1 | 16/24 | The Spider and the Fly | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
-| Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
 | Those About to Die | S1E2 | 1/10 | Trust None | Currently watching |
@@ -80,14 +80,15 @@ Newest first. Add a row every time you watch something — **the Title column al
 | The Rookie | S4E8 | 60/144 | Hit and Run | Paused a while |
 | The X-Files | S2E14 | 37/220 | Die Hand Die Verletzt | Paused a while |
 
-## ✓ Confirmed Completed (4)
+## ✓ Confirmed Completed (5)
 
 - Black Snow
 - Cape Fear · 10/10 · ✓ completed 2026-07-30 — first finish since the shutdown
 - Criminal Record
+- Sugar (2024) · 16/16 · ✓ caught up 2026-08-07 on finale night — season 3 unannounced
 - The Agency (2024)
 
-> Black Snow, Criminal Record, and The Agency come from the recovered TV Time cache (completion was cached for only 32 of the 277 shows). Cape Fear was completed on this log. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
+> Black Snow, Criminal Record, and The Agency come from the recovered TV Time cache (completion was cached for only 32 of the 277 shows). Cape Fear and Sugar were completed on this log. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
 ## 📺 All TV Shows (278)
 
@@ -276,7 +277,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Striking Out
 - Suburra: Blood on Rome
 - Suburræterna
-- Sugar (2024) · 15/16
+- Sugar (2024) · 16/16 · ✓ caught up
 - Taboo (2017)
 - Tales from the Loop
 - Task
