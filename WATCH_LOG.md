@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 460 | 278 | 230 | 50 |
+| 460 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -371,7 +371,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (230)
+## 🎬 All Movies (232)
 
 - 1917 (2020)
 - 2046 (2004)
@@ -584,6 +584,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Sixth Sense (2000)
 - The Spiderwick Chronicles (2008)
 - The Spy Who Loved Me (1977) · ✓ watched pre-tracking (Bond marathon)
+- The Thirteenth Floor (1999)
 - The Tomorrow War (2021)
 - The Town (2010)
 - The Twilight Samurai (2002)
@@ -602,9 +603,10 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Venom (2018)
 - Whiplash (2014)
 - Wonder Woman 1984 (2020)
+- World on a Wire (1973)
 - You Only Live Twice (1967) · ✓ watched pre-tracking (Bond marathon)
 
-## 🔖 Watchlist (50)
+## 🔖 Watchlist (52)
 
 - 2046
 - Altered Carbon: Resleeved
@@ -653,9 +655,11 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Lost World: Jurassic Park
 - The New Mutants
 - The Outlaws
+- The Thirteenth Floor · free on Roku Channel/Tubi, also Netflix
 - The Twilight Samurai
 - Top Gun: Maverick
 - Twilight of the Warriors: Walled In
+- World on a Wire · Criterion Channel (restored) or Kanopy
 
 ---
 
