@@ -43,7 +43,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (31 shows)
+## ▶ Resume Here — where you left off (32 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
@@ -51,6 +51,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
+| Lioness | S3E1 | 16/24 | The Spider and the Fly | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
@@ -192,7 +193,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Justified: City Primeval
 - Knightfall
 - Liaison
-- Lioness
+- Lioness · 16/24 · S1–2 watched pre-tracking; S3 airing now
 - Loki
 - Lost
 - Lost U-Boats of WWII
