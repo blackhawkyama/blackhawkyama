@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 458 | 278 | 230 | 50 |
+| 459 | 278 | 230 | 50 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-07 | Those About to Die | S1E1 | Rise or Die | Fresh-start restart — 1/10, pick up at S1E2 "Trust None" |
 | 2026-08-07 | Death on the Nile (2022) | Movie | Death on the Nile | Branagh's Poirot — joins Murder on the Orient Express (2017) in the archive |
 | 2026-08-04 | Death in Paradise | S9E5 | Switcharoo | Progress 67/120 → 68/120, pick up at S9E6 "Murder on Mosquito Island" |
 | 2026-08-04 | Sugar (2024) | S2E7 | What Else Can You Do? | Progress 14/16 → 15/16 — only the Aug 7 finale left |
@@ -54,7 +55,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Sugar (2024) | S2E8 | 15/16 | TBA — finale, airs Aug 7 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
-| Those About to Die | S1E1 | 0/10 | Rise or Die | Currently watching |
+| Those About to Die | S1E2 | 1/10 | Trust None | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
 | Widow's Bay | S1E7 | 6/10 | Seasickness | Currently watching |
 | Alien: Earth | S1E2 | 1/8 | Mr. October | Paused a while |
@@ -343,7 +344,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Wire
 - The Witcher
 - The X-Files · 37/220
-- Those About to Die · 0/10 · restarted fresh 2026-08-07 (earlier progress unknown)
+- Those About to Die · 1/10 · restarted fresh 2026-08-07 (earlier progress unknown)
 - Tokyo Vice
 - Tom Clancy's Jack Ryan
 - Treadstone
