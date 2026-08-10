@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 460 | 278 | 232 | 52 |
+| 462 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,8 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-09 | Lioness | S3E2 | No Sorrow Like the Survivor | Progress 17/24 → 18/24 — caught up, watched on air night; S3E3 airs Aug 16 |
+| 2026-08-09 | Lioness | S3E1 | The Spider and the Fly | Progress 16/24 → 17/24 |
 | 2026-08-07 | Sugar (2024) | S2E8 | Like Sugar | 🏁 SEASON COMPLETE — 16/16, watched on finale night; season 3 unannounced |
 | 2026-08-07 | Those About to Die | S1E1 | Rise or Die | Fresh-start restart — 1/10, pick up at S1E2 "Trust None" |
 | 2026-08-07 | Death on the Nile (2022) | Movie | Death on the Nile | Branagh's Poirot — joins Murder on the Orient Express (2017) in the archive |
@@ -52,7 +54,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
-| Lioness | S3E1 | 16/24 | The Spider and the Fly | Currently watching |
+| Lioness | S3E3 | 18/24 | TBA — airs Aug 16 | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
@@ -194,7 +196,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Justified: City Primeval
 - Knightfall
 - Liaison
-- Lioness · 16/24 · S1–2 watched pre-tracking; S3 airing now
+- Lioness · 18/24 · S1–2 watched pre-tracking; caught up on S3 as it airs
 - Loki
 - Lost
 - Lost U-Boats of WWII
