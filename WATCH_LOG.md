@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 464 | 278 | 232 | 52 |
+| 466 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,8 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-16 | Dark Matter (2024) | S1E4 | The Corridor | Progress 3/19 → 4/19, pick up at S1E5 "Worldless" |
+| 2026-08-16 | Dark Matter (2024) | S1E3 | The Box | Progress 2/19 → 3/19 |
 | 2026-08-15 | Dark Matter (2024) | S1E2 | Trip of a Lifetime | Progress 2/19 (total includes the 10-episode S2 premiering Aug 28); watching S1E3 "The Box" now |
 | 2026-08-15 | Dark Matter (2024) | S1E1 | Are You Happy in Your Life? | New on the board — first tracked watches for the show |
 | 2026-08-09 | Lioness | S3E2 | No Sorrow Like the Survivor | Progress 17/24 → 18/24 — caught up, watched on air night; S3E3 airs Aug 16 |
@@ -54,7 +56,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
-| Dark Matter (2024) | S1E3 | 2/19 | The Box | Currently watching |
+| Dark Matter (2024) | S1E5 | 4/19 | Worldless | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E3 | 18/24 | TBA — airs Aug 16 | Currently watching |
@@ -155,7 +157,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Cross
 - CSI: Vegas
 - Curb Your Enthusiasm
-- Dark Matter (2024) · 2/19
+- Dark Matter (2024) · 4/19
 - Das Boot
 - Deadwood
 - Death in Paradise · 68/120
