@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 462 | 278 | 232 | 52 |
+| 464 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,8 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-15 | Dark Matter (2024) | S1E2 | Trip of a Lifetime | Progress 2/19 (total includes the 10-episode S2 premiering Aug 28); watching S1E3 "The Box" now |
+| 2026-08-15 | Dark Matter (2024) | S1E1 | Are You Happy in Your Life? | New on the board — first tracked watches for the show |
 | 2026-08-09 | Lioness | S3E2 | No Sorrow Like the Survivor | Progress 17/24 → 18/24 — caught up, watched on air night; S3E3 airs Aug 16 |
 | 2026-08-09 | Lioness | S3E1 | The Spider and the Fly | Progress 16/24 → 17/24 |
 | 2026-08-07 | Sugar (2024) | S2E8 | Like Sugar | 🏁 SEASON COMPLETE — 16/16, watched on finale night; season 3 unannounced |
@@ -46,12 +48,13 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (31 shows)
+## ▶ Resume Here — where you left off (32 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
+| Dark Matter (2024) | S1E3 | 2/19 | The Box | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E3 | 18/24 | TBA — airs Aug 16 | Currently watching |
@@ -152,7 +155,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Cross
 - CSI: Vegas
 - Curb Your Enthusiasm
-- Dark Matter (2024)
+- Dark Matter (2024) · 2/19
 - Das Boot
 - Deadwood
 - Death in Paradise · 68/120
