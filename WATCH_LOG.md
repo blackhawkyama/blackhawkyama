@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 468 | 278 | 232 | 52 |
+| 470 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,8 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-16 | Dark Matter (2024) | S1E8 | Jupiter | Progress 7/19 → 8/19 — only the S1 finale "Entanglement" left before season 2 |
+| 2026-08-16 | Dark Matter (2024) | S1E7 | In the Fires of Dead Stars | Progress 6/19 → 7/19 |
 | 2026-08-16 | Dark Matter (2024) | S1E6 | Superposition | Progress 5/19 → 6/19, pick up at S1E7 "In the Fires of Dead Stars" |
 | 2026-08-16 | Dark Matter (2024) | S1E5 | Worldless | Progress 4/19 → 5/19, pick up at S1E6 "Superposition" |
 | 2026-08-16 | Dark Matter (2024) | S1E4 | The Corridor | Progress 3/19 → 4/19, pick up at S1E5 "Worldless" |
@@ -58,7 +60,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 |---|---|---|---|---|
 | Below Deck Mediterranean | S11E1 | 174/179 | King’s Crash Landing | Currently watching |
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
-| Dark Matter (2024) | S1E7 | 6/19 | In the Fires of Dead Stars | Currently watching |
+| Dark Matter (2024) | S1E9 | 8/19 | Entanglement | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E3 | 18/24 | TBA — airs Aug 16 | Currently watching |
@@ -159,7 +161,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Cross
 - CSI: Vegas
 - Curb Your Enthusiasm
-- Dark Matter (2024) · 6/19
+- Dark Matter (2024) · 8/19
 - Das Boot
 - Deadwood
 - Death in Paradise · 68/120
