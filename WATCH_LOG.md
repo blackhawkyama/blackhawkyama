@@ -68,6 +68,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
+| The Rockford Files | S2E3 | 25/123 | Gearjammers (1) | Currently watching |
 | Those About to Die | S1E2 | 1/10 | Trust None | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
 | Widow's Bay | S1E7 | 6/10 | Seasickness | Currently watching |
@@ -88,7 +89,6 @@ Newest first. Add a row every time you watch something — **the Title column al
 | The Last Frontier (2025) | S1E2 | 1/10 | Wind of Change | Paused a while |
 | The Last of Us | S1E3 | 2/16 | Long, Long Time | Paused a while |
 | The Lone Ranger (1949) | S5E7 | 15/221 | The Return of Don Pedro O'Sullivan | Paused a while |
-| The Rockford Files | S2E3 | 25/123 | Gearjammers (1) | Paused a while |
 | The Rookie | S4E8 | 60/144 | Hit and Run | Paused a while |
 | The X-Files | S2E14 | 37/220 | Die Hand Die Verletzt | Paused a while |
 
