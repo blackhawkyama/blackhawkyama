@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 471 | 278 | 232 | 52 |
+| 472 | 278 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-17 | The Rockford Files | S2E3 | Gearjammers (1) | First Rockford watch since the archive — 26/123, watching "Gearjammers (2)" now |
 | 2026-08-17 | Dark Matter (2024) | S1E9 | Entanglement | 🏁 SEASON 1 COMPLETE — 9/19, fully caught up; S2 premieres Aug 28 with "A Quiet Life" |
 | 2026-08-16 | Dark Matter (2024) | S1E8 | Jupiter | Progress 7/19 → 8/19 — only the S1 finale "Entanglement" left before season 2 |
 | 2026-08-16 | Dark Matter (2024) | S1E7 | In the Fires of Dead Stars | Progress 6/19 → 7/19 |
@@ -68,7 +69,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
-| The Rockford Files | S2E3 | 25/123 | Gearjammers (1) | Currently watching |
+| The Rockford Files | S2E4 | 26/123 | Gearjammers (2) | Currently watching |
 | Those About to Die | S1E2 | 1/10 | Trust None | Currently watching |
 | When No One Sees Us | S1E5 | 4/8 | Sergeant Andrew Taylor | Currently watching |
 | Widow's Bay | S1E7 | 6/10 | Seasickness | Currently watching |
@@ -342,7 +343,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - The Rat Patrol
 - The Regime
 - The Rig (2023)
-- The Rockford Files · 25/123
+- The Rockford Files · 26/123
 - The Rookie · 60/144
 - The Shield
 - The Son
