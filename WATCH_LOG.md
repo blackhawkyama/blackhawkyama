@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 472 | 278 | 232 | 52 |
+| 472 | 279 | 232 | 52 |
 
 ## 🆕 Running Log
 
@@ -103,7 +103,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 > Black Snow, Criminal Record, and The Agency come from the recovered TV Time cache (completion was cached for only 32 of the 277 shows). Cape Fear and Sugar were completed on this log. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
-## 📺 All TV Shows (278)
+## 📺 All TV Shows (279)
 
 - 1916: The Irish Rebellion
 - 1923
@@ -374,6 +374,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Wallander (UK)
 - Warrior
 - Watchmen
+- Wayward Pines · 0/20 · queued, not started — Blake Crouch adaptation
 - We Own This City
 - Westworld
 - When No One Sees Us · 4/8
