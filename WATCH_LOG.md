@@ -64,7 +64,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Dark Matter (2024) | S2E1 | 9/19 | A Quiet Life — S2 premiere, Aug 28 | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
-| Lioness | S3E3 | 18/24 | TBA — airs Aug 16 | Currently watching |
+| Lioness | S3E3 | 18/24 | The Bear Is Infected | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
 | The Agency (2024) | S2E6 | 20/20 | Officially a Ghost | Currently watching |
 | The Prisoner | S1E2 | 1/17 | The Chimes of Big Ben | Currently watching |
