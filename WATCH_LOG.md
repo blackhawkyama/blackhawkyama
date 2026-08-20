@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 472 | 279 | 232 | 52 |
+| 472 | 279 | 233 | 52 |
 
 ## 🆕 Running Log
 
@@ -385,7 +385,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Yellowstone (2018)
 - ZeroZeroZero
 
-## 🎬 All Movies (232)
+## 🎬 All Movies (233)
 
 - 1917 (2020)
 - 2046 (2004)
@@ -470,6 +470,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Hellboy II: The Golden Army (2008)
 - Hellboy The Crooked Man (2025)
 - Her (2014)
+- Hounds of War (2024) · watching 2026-08-20
 - In the Land of Saints and Sinners (2024)
 - Inception (2010)
 - Interstellar (2014)
