@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 472 | 279 | 233 | 52 |
+| 473 | 280 | 233 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-20 | Hard Knocks: Seattle Seahawks | S1E1 | Episode 1 | New show — HBO's camp doc on the reigning champs; 1/5, pick up at E2 (episodes officially unnamed) |
 | 2026-08-17 | The Rockford Files | S2E3 | Gearjammers (1) | First Rockford watch since the archive — 26/123, watching "Gearjammers (2)" now |
 | 2026-08-17 | Dark Matter (2024) | S1E9 | Entanglement | 🏁 SEASON 1 COMPLETE — 9/19, fully caught up; S2 premieres Aug 28 with "A Quiet Life" |
 | 2026-08-16 | Dark Matter (2024) | S1E8 | Jupiter | Progress 7/19 → 8/19 — only the S1 finale "Entanglement" left before season 2 |
@@ -56,7 +57,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | 2026-07-23 | Cape Fear | S1E3 | Phantom Sensations | Progress 2/6 → 3/6, pick up at S1E4 "Pierced" |
 | 2026-07-23 | Death in Paradise | S9E1 | La Murder Le Diable | First entry since the TV Time shutdown — progress now 64/120, pick up at S9E2 |
 
-## ▶ Resume Here — where you left off (32 shows)
+## ▶ Resume Here — where you left off (33 shows)
 
 | Show | Pick up at | Progress | Next episode | Status |
 |---|---|---|---|---|
@@ -64,6 +65,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
 | Dark Matter (2024) | S2E1 | 9/19 | A Quiet Life — S2 premiere, Aug 28 | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
+| Hard Knocks: Seattle Seahawks | S1E2 | 1/5 | Episode 2 | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E3 | 18/24 | The Bear Is Infected | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -103,7 +105,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 > Black Snow, Criminal Record, and The Agency come from the recovered TV Time cache (completion was cached for only 32 of the 277 shows). Cape Fear and Sugar were completed on this log. (House of the Dragon was here at 21/21, but season 3 began airing — it's back in the Resume table.) Blank progress elsewhere means "unknown," not "unwatched" — TV Time didn't store those counts locally.
 
-## 📺 All TV Shows (279)
+## 📺 All TV Shows (280)
 
 - 1916: The Irish Rebellion
 - 1923
@@ -185,6 +187,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Goliath
 - Gomorrah
 - Guyane
+- Hard Knocks: Seattle Seahawks · 1/5
 - Hard Sun
 - Hawaii Five-O
 - Hawkeye (2021)
