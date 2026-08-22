@@ -6,7 +6,7 @@
 
 | Episodes watched | Shows followed | Movies tracked | On watchlist |
 |:---:|:---:|:---:|:---:|
-| 474 | 281 | 233 | 52 |
+| 475 | 281 | 233 | 52 |
 
 ## 🆕 Running Log
 
@@ -14,6 +14,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 
 | Date | Show | Episode | Title | Notes |
 |---|---|---|---|---|
+| 2026-08-21 | Hard Knocks: Seattle Seahawks | S1E3 | Episode 3 | Progress 2/5 → 3/5 — caught up; E4 airs Aug 25 |
 | 2026-08-20 | Hard Knocks: Seattle Seahawks | S1E2 | Episode 2 | Progress 1/5 → 2/5, pick up at E3 |
 | 2026-08-20 | Hard Knocks: Seattle Seahawks | S1E1 | Episode 1 | New show — HBO's camp doc on the reigning champs; 1/5, pick up at E2 (episodes officially unnamed) |
 | 2026-08-17 | The Rockford Files | S2E3 | Gearjammers (1) | First Rockford watch since the archive — 26/123, watching "Gearjammers (2)" now |
@@ -66,7 +67,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 | Blue Lights | S3E5 | 4/18 | Ordo ab Chao | Currently watching |
 | Dark Matter (2024) | S2E1 | 9/19 | A Quiet Life — S2 premiere, Aug 28 | Currently watching |
 | Death in Paradise | S9E6 | 68/120 | Murder on Mosquito Island | Currently watching |
-| Hard Knocks: Seattle Seahawks | S1E3 | 2/5 | Episode 3 | Currently watching |
+| Hard Knocks: Seattle Seahawks | S1E4 | 3/5 | Episode 4 — airs Aug 25 | Currently watching |
 | House of the Dragon | S3E6 | 23/26 | Faceless Men | Currently watching |
 | Lioness | S3E3 | 18/24 | The Bear Is Infected | Currently watching |
 | SAS Rogue Heroes | S2E4 | 9/12 | Episode 4 | Currently watching |
@@ -189,7 +190,7 @@ Newest first. Add a row every time you watch something — **the Title column al
 - Gomorrah
 - Guyane
 - Hard Knocks: Chicago Bears (2024) · 5/5 · ✓ watched pre-tracking
-- Hard Knocks: Seattle Seahawks · 2/5
+- Hard Knocks: Seattle Seahawks · 3/5
 - Hard Sun
 - Hawaii Five-O
 - Hawkeye (2021)
